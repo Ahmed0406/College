@@ -1,0 +1,73 @@
+{% extends 'layout_2.html.twig' %}
+
+{% block content %}
+<h2 class="pad8">Contact</h2>
+<!-- Blog Listing -->
+<div class="listing">
+    <div class="contactblock">
+        <!-- Contact block  -->
+        <div class="block1">
+            <h5>Adresse :</h5>
+
+            <div class="mailingaddress">
+                <p>Lycée Al-Ahed Al-Jadid, Avenue de la République, Thala 1210</p>
+
+            </div>
+            <div class="teleno colr">(+126) 71 555 555</div>
+            <div class="teleno1 colr">(+216) 73 000 000</div>
+            <div class="emailaddress">
+                <a href="#">hosni201190@gmail.com</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="contactblock">
+
+        <div class="block1">
+            <h5>Message</h5>
+            <ul class="inquiry">
+                <li><input name="txtName" value="Nom & Prénom " type="text"
+                           onfocus="if(this.value=='Nom & Prénom ') {this.value='';}"
+                           onblur="if(this.value=='') {this.value='Nom & Prénom ';}"
+
+                    /></li>
+                <li><input name="txtEmail" value="Email"
+                           onfocus="if(this.value=='Email') {this.value='';}"
+                           onblur="if(this.value=='') {this.value='Email';}"
+                           type="text"/></li>
+                <li><input name="txtPhoneno" value="Téléphone"
+                           onfocus="if(this.value=='Téléphone') {this.value='';}"
+                           onblur="if(this.value=='') {this.value='Téléphone';}"
+                           type="text"/></li>
+                <li>
+                    <select name="txtcountry">
+                        <option>Tunisie</option>
+                        <option>Algerie</option>
+                        <option>France</option>
+                    </select>
+                </li>
+                <li>
+                    <textarea rows="0" cols="0" name="txtMessage" class="txtarea">Message</textarea>
+                </li>
+
+
+            </ul>
+            <div class="action1">
+                <a href="#" class="btn1 left">Envoyer</a>
+            </div>
+        </div>
+        <div class="block2">
+            <h5>Localisation</h5>
+            <div class="map">
+                <div id="map"></div>
+            </div>
+
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock %}
+

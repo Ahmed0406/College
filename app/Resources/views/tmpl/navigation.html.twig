@@ -1,0 +1,39 @@
+<div id="smoothmenu1" class="ddsmoothmenu">
+    <ul>
+        <li class="first"><a class="selected" href="{{ path('homepage') }}">Accueil</a></li>
+        <li><a href="#">Lycée</a>
+            <ul>
+                <li><a href="{{ path('presentation') }}">Présentation</a></li>
+                <li><a href="{{ path('enseignant') }}">Enseignant</a></li>
+                <li><a href="{{ path('galerie_photos') }}">Galerie photos</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Départements</a>
+            <ul>
+                <li><a href="{{ path('dep_informatique') }}">Informatique</a></li>
+                <li><a href="{{ path('dep_physique') }}">Physique</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Formation</a>
+            <ul>
+                <li><a href="{{ path('for_informatique') }}">Informatique</a></li>
+                <li><a href="{{ path('for_lettre') }}">Lettre</a></li>
+                <li><a href="{{ path('for_mathematique') }}">Mathématique</a></li>
+                <li><a href="{{ path('for_science') }}">Science</a></li>
+                <li><a href="{{ path('for_economie_gestion') }}">Economie-Gestion </a></li>
+            </ul>
+        </li>
+        <li><a href="#">Vie scolaire</a>
+            <ul>
+                <li><a href="{{ path('clubs') }}">Clubs</a></li>
+                <li><a href="{{ path('manifestation') }}">Manifestation</a></li>
+            </ul>
+        </li>
+        <li><a href="{{ path('forum') }}">forum</a></li>
+        <li><a href="{{ path('planning') }}">Plan de site</a></li>
+        <li><a href="{{ path('bibliotheque') }}">Bibliothèque</a></li>
+        <li><a href="{{ path('contact') }}" class="last">Contact</a></li>
+    </ul>
+</div>
+<!-- navigation ends -->
+<div class="clear"></div>
