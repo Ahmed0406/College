@@ -1954,7 +1954,7 @@ a.link {
     float: left !important;
 }
 
-a.btn {
+.btn {
     width: 53px;
     height: 21px;
     line-height: 21px;
@@ -1964,7 +1964,7 @@ a.btn {
     display: inline-block;
 }
 
-a.btn1 {
+.btn1 {
     width: 83px;
     height: 30px;
     line-height: 27px;

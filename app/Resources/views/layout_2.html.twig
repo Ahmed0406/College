@@ -1,4 +1,4 @@
-{% extends 'layout_base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block content_app %}
     <div id="bg">
@@ -34,7 +34,7 @@
                 <div class="clear"></div>
                 <!-- Navigation -->
                 <div class="navigation">
-                    {% include ':tmpl:navigation.html.twig' %}
+                    {% include ':tmpl:menu.html.twig' %}
                 </div>
             </div>
             <!-- Content Seciton -->
@@ -57,34 +57,9 @@
                 </div>
                 <!-- Col2 -->
                 <div class="col2">
-                    <div class="rtab">
-                        <div class="rtab_content" id="rtab1" style="display:none;">
-                            <div class="form">
-                                <a href="#" class="post_new_blog txtcufon"><span
-                                            class="cufon-alt">Espace Intranet </span></a>
-                                <ul class="inquiryform">
 
-                                    <li>
+                    {{ render(controller('AppBundle:Security:login')) }}
 
-                                        <input type="text" class="password" name="password" placeholder="Login"
-                                               autocomplete="off">
-
-                                    </li>
-                                    <li>
-                                        <input type="password" class="password" name="password"
-                                               placeholder="Mot de passe" autocomplete="off">
-
-                                    </li>
-                                </ul>
-                                <a href="#" class="btn1">Connexion</a>
-                                <a class="forgot" href="#">Mot de passe oublié</a>
-                            </div>
-
-                            <div class="clear"></div>
-                        </div>
-
-
-                    </div>
                     <!-- Search  Blog Post -->
                     <div class="online_classes">
                         <div class="crheading">
