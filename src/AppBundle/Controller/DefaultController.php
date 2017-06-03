@@ -16,7 +16,10 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('default/index.html.twig', []);
+        $user = $this->getUser();
+        return $this->render('default/index.html.twig',array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -26,7 +29,10 @@ class DefaultController extends Controller
      */
     public function contactAction(Request $request)
     {
-        return $this->render(':default:contact.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:contact.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -36,7 +42,10 @@ class DefaultController extends Controller
      */
     public function presentationAction(Request $request)
     {
-        return $this->render(':default:presentation.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:presentation.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -46,7 +55,10 @@ class DefaultController extends Controller
      */
     public function enseignantAction(Request $request)
     {
-        return $this->render(':default:enseignant.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:enseignant.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -56,7 +68,10 @@ class DefaultController extends Controller
      */
     public function galerie_photosAction(Request $request)
     {
-        return $this->render(':default:galerie_photos.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:galerie_photos.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -66,7 +81,10 @@ class DefaultController extends Controller
      */
     public function dép_informatiqueAction(Request $request)
     {
-        return $this->render(':default:dép_informatique.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:dép_informatique.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -76,7 +94,10 @@ class DefaultController extends Controller
      */
     public function dép_physiqueAction(Request $request)
     {
-        return $this->render(':default:dép_physique.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:dép_physique.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -86,7 +107,10 @@ class DefaultController extends Controller
      */
     public function for_informatiqueAction(Request $request)
     {
-        return $this->render(':default:for_informatique.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:for_informatique.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -96,7 +120,10 @@ class DefaultController extends Controller
      */
     public function for_lettreAction(Request $request)
     {
-        return $this->render(':default:for_lettre.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:for_lettre.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -106,7 +133,10 @@ class DefaultController extends Controller
      */
     public function for_mathématiqueAction(Request $request)
     {
-        return $this->render(':default:for_mathematique.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:for_mathematique.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -116,7 +146,10 @@ class DefaultController extends Controller
      */
     public function for_scienceAction(Request $request)
     {
-        return $this->render(':default:for_science.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:for_science.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -126,7 +159,10 @@ class DefaultController extends Controller
      */
     public function for_economie_gestionAction(Request $request)
     {
-        return $this->render(':default:for_economie_gestion.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:for_economie_gestion.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -136,7 +172,10 @@ class DefaultController extends Controller
      */
     public function clubsAction(Request $request)
     {
-        return $this->render(':default:clubs.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:clubs.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -146,7 +185,10 @@ class DefaultController extends Controller
      */
     public function manifestationAction(Request $request)
     {
-        return $this->render(':default:manifestation.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:manifestation.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -156,7 +198,10 @@ class DefaultController extends Controller
      */
     public function forumAction(Request $request)
     {
-        return $this->render(':default:forum.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:forum.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -166,7 +211,10 @@ class DefaultController extends Controller
      */
     public function planningAction(Request $request)
     {
-        return $this->render(':default:planning.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:planning.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
@@ -176,6 +224,9 @@ class DefaultController extends Controller
      */
     public function bibliothequeAction(Request $request)
     {
-        return $this->render(':default:bibliotheque.html.twig', []);
+        $user = $this->getUser();
+        return $this->render(':default:bibliotheque.html.twig', array(
+            'user' => $user,
+        ));
     }
 }

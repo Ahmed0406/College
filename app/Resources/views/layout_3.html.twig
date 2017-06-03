@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block content_app %}
+    <div id="bg">
+        <!-- Wapper Sec -->
+        <div id="wrapper_sec">
+            <!-- masterhead -->
+
+            {% include ':tmpl:header.html.twig' %}
+
+            <!-- Content Seciton -->
+            <div id="content_section">
+                <!-- News Updates -->
+
+                <!-- Col1 -->
+                <div class="col1">
+                    <!-- Banner -->
+                    <div id="banner1">
+                        <a href="#"><img src="{{ asset('images/newsbanner.gif') }}" alt=""/></a>
+                        <div class="heading">
+                            <h1>College Blog</h1>
+                        </div>
+                    </div>
+                    <!-- Content Heading -->
+                    <div id="content2">
+                        <h2 class="pad8">Profil</h2>
+                        <!-- Blog Listing -->
+                        <ul class="listing">
+
+                            {% block content_profile %}{% endblock %}
+
+                        </ul>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- Col2 -->
+                <div class="col2">
+                    <div class="rtab">
+                        <div class="rtab_content" id="rtab1" style="display:none;">
+                            <div class="form">
+                                <a class="poste"><span class="cufon-alt">Bienvenue <li>{{ user }}</li> </span></a>
+                            </div>
+
+                            <div class="clear"></div>
+                        </div>
+
+
+                    </div>
+                    <!-- Search  Blog Post -->
+                    <div class="online_classes">
+                        <div class="crheading">
+                            <h5 class="message"><span class="cufon-alt">Messagerie</span></h5>
+
+                        </div>
+                        <ul>
+                            <li>
+
+                                <div class="description">
+                                    <h5><a href="#"><span
+                                                    class="cufon-alt">Message reçu(8)</span></a></h5>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                    <div class="online_classes">
+                        <div class="crheading">
+                            <h5 class="fiche"><span class="cufon-alt"><a href="#">Fiche élève</a></span>
+                            </h5>
+
+                        </div>
+
+                    </div>
+                    <div class="online_classes">
+                        <div class="crheading">
+                            <h5 class="emploi"><span class="cufon-alt"><a href="#">Emploi du temps</a></span>
+                            </h5>
+
+                        </div>
+
+                    </div>
+                    <div class="online_classes">
+                        <div class="crheading">
+                            <h5 class="examens"><span class="cufon-alt"><a href="#">Calendrier examens</a></span>
+                            </h5>
+
+                        </div>
+
+
+                    </div>
+                    <div class="online_classes">
+                        <div class="crheading">
+                            <h5 class="bulletin"><span class="cufon-alt"><a href="#">Bulletin des notes</a></span>
+                            </h5>
+
+                        </div>
+
+
+                    </div>
+                    <div class="online_classes">
+                        <div class="crheading">
+                            <h5 class="cours"><span class="cufon-alt"><a href="#">Support de cours</a></span>
+                            </h5>
+
+                        </div>
+
+
+                    </div>
+                    <div class="online_classes">
+                        <div class="crheading">
+                            <h5 class="biblio"><span class="cufon-alt"><a href="#">Bibliothèque</a></span></h5>
+                        </div>
+
+
+                    </div>
+                    <div class="online_classes">
+                        <div class="crheading">
+                            <h5 class="deconnexion"><span class="cufon-alt"><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></span>
+                            </h5>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="clear"></div>
+                    <!--col2 ends -->
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

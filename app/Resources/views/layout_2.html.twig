@@ -58,7 +58,25 @@
                 <!-- Col2 -->
                 <div class="col2">
 
-                    {{ render(controller('AppBundle:Security:login')) }}
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <div class="rtab">
+                            <div class="rtab_content" id="rtab1" style="display:none;">
+                                <div class="form">
+                                    <a class="poste" href="{{ path('fos_user_profile_show') }}">
+                                        <span class="cufon-alt"> Bienvenue
+                                            <li>{{ user }}</li>
+                                            <li>__________________</li>
+                                            <li>___________</li>
+                                            <li>______</li>
+                                            <li>Accéder à votre compte</li>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        {{ render(controller('AppBundle:Security:login')) }}
+                    {% endif %}
 
                     <!-- Search  Blog Post -->
                     <div class="online_classes">
