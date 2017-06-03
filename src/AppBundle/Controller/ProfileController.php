@@ -25,6 +25,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 use FOS\UserBundle\Controller\ProfileController as BaseController;
+use function Symfony\Component\VarDumper\Dumper\esc;
 
 /**
  * Controller managing the user profile.
@@ -42,9 +43,19 @@ class ProfileController extends BaseController
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
+        $profile_view = '';
+        if ($user->hasRole('ROLE_ELEVE') && $user->hasRole('ROLE_USER')){
+            $profile_view = 'profile/eleve.html.twig';
+        }
+        elseif ($user->hasRole('ROLE_ENSEIGNANT') && $user->hasRole('ROLE_USER')){
+            $profile_view = 'profile/enseignant.html.twig';
+        }else{
+            $this->redirectToRoute('homepage');
+        }
 
-        return $this->render('profile/index.html.twig', array(
+        return $this->render('profile/profile.html.twig', array(
             'user' => $user,
+            'profile_view' => $profile_view,
         ));
     }
 
