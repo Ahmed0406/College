@@ -13,13 +13,33 @@ Installation du projet
 
 Installer [composer](https://getcomposer.org/download/ "composer")
 
-puis update projet:
+Puis update projet:
 ```
 composer install
 ```
+Après configurer votre projet avec `parameters.yml` dans le `app/config` par:
+  
+```
+#app/config/parameters.yml
 
-.3) Update Base de Donnée
+parameters:
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: app_bd
+    database_user: root
+    database_password: null # password for data base
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: app
+    mailer_password: app
+    ...
+```
 
+.3) Créer et Update Base de Donnée
+
+````
+php bin/console doctrine:database:create
+````
 ```
 php bin/console doctrine:schema:drop --full-database --force 
 ```
