@@ -1,0 +1,10 @@
+services:
+#    admin.example:
+#        class: AdminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    admin.actualite:
+        class: AdminBundle\Controller\ActualiteController
+        arguments: [~, AppBundle\Entity\Actualite, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Actualite }
