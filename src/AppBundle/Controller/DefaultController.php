@@ -17,8 +17,14 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $user = $this->getUser();
+
+        $em = $this->getDoctrine()->getManager();
+
+        $actualite = $em->getRepository('AppBundle:Actualite')->findAll();
+
         return $this->render('default/index.html.twig',array(
             'user' => $user,
+            'actualite' => $actualite,
         ));
     }
 
