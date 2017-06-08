@@ -8,3 +8,9 @@ services:
         arguments: [~, AppBundle\Entity\Actualite, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Actualite }
+
+    admin.eleve:
+        class: AdminBundle\Controller\UserEleveController
+        arguments: [~, AppBundle\Entity\Eleve, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Eleve }

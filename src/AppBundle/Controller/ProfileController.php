@@ -44,13 +44,14 @@ class ProfileController extends BaseController
             throw new AccessDeniedException('This user does not have access to this section.');
         }
         $profile_view = '';
-        if ($user->hasRole('ROLE_ELEVE') && $user->hasRole('ROLE_USER')){
+        if ($user->hasRole('ROLE_ELEVE') && $user->hasRole('ROLE_USER')) {
             $profile_view = 'profile/eleve.html.twig';
-        }
-        elseif ($user->hasRole('ROLE_ENSEIGNANT') && $user->hasRole('ROLE_USER')){
+        } elseif ($user->hasRole('ROLE_ENSEIGNANT') && $user->hasRole('ROLE_USER')) {
             $profile_view = 'profile/enseignant.html.twig';
-        }else{
-            $this->redirectToRoute('homepage');
+        } elseif ($user->hasRole('ROLE_ADMIN' && $user->hasRole('ROLE_USER'))) {
+            return $this->redirectToRoute('sonata_admin_redirect');
+        } else {
+            return $this->redirectToRoute('homepage');
         }
 
         return $this->render('profile/profile.html.twig', array(

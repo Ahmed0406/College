@@ -88,7 +88,7 @@ class DefaultController extends Controller
     public function dép_informatiqueAction(Request $request)
     {
         $user = $this->getUser();
-        return $this->render(':default:dép_informatique.html.twig', array(
+        return $this->render(':default:dep_informatique.html.twig', array(
             'user' => $user,
         ));
     }
@@ -101,7 +101,7 @@ class DefaultController extends Controller
     public function dép_physiqueAction(Request $request)
     {
         $user = $this->getUser();
-        return $this->render(':default:dép_physique.html.twig', array(
+        return $this->render(':default:dep_physique.html.twig', array(
             'user' => $user,
         ));
     }
