@@ -15,7 +15,8 @@ class UserAdminController extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('username');
+            ->addIdentifier('username')
+            ->add('nom');
     }
 
     protected function configureFormFields(FormMapper $formMapper)
@@ -39,13 +40,16 @@ class UserAdminController extends AbstractAdmin
             ->add('roles', 'choice', array(
                 'choices'  => $rolesChoices,
                 'multiple' => true
-            ));
+            ))
+            ->add('nom', 'text');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('username');
+            ->add('username')
+            ->add('nom');
+
     }
 
     public function toString($object)
