@@ -7,10 +7,22 @@ services:
         class: AdminBundle\Controller\ActualiteController
         arguments: [~, AppBundle\Entity\Actualite, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Actualite }
+            - { name: sonata.admin, manager_type: orm, group: 'Actualite', label: Actualite }
+
+    admin.admin:
+        class: AdminBundle\Controller\UserAdminController
+        arguments: [~, AppBundle\Entity\User, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'User', label: User }
 
     admin.eleve:
         class: AdminBundle\Controller\UserEleveController
         arguments: [~, AppBundle\Entity\Eleve, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Eleve }
+            - { name: sonata.admin, manager_type: orm, group: 'User', label: Eleve }
+
+    admin.enseignant:
+        class: AdminBundle\Controller\UserEnseignantController
+        arguments: [~, AppBundle\Entity\Enseignant, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'User', label: Enseignant }

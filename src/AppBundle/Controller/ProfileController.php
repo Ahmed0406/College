@@ -48,7 +48,7 @@ class ProfileController extends BaseController
             $profile_view = 'profile/eleve.html.twig';
         } elseif ($user->hasRole('ROLE_ENSEIGNANT') && $user->hasRole('ROLE_USER')) {
             $profile_view = 'profile/enseignant.html.twig';
-        } elseif ($user->hasRole('ROLE_ADMIN' && $user->hasRole('ROLE_USER'))) {
+        } elseif ($user->hasRole('ROLE_ADMIN')) {
             return $this->redirectToRoute('sonata_admin_redirect');
         } else {
             return $this->redirectToRoute('homepage');
