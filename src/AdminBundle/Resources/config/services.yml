@@ -1,27 +1,24 @@
 services:
-#    admin.example:
-#        class: AdminBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
 
-    admin.actualite:
+    app.admin.actualite:
         class: AdminBundle\Controller\ActualiteController
         arguments: [~, AppBundle\Entity\Actualite, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, group: 'Actualite', label: Actualite }
 
-    admin.admin:
+    app.admin.admin:
         class: AdminBundle\Controller\UserAdminController
         arguments: [~, AppBundle\Entity\User, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, group: 'User', label: User }
 
-    admin.eleve:
+    app.admin.eleve:
         class: AdminBundle\Controller\UserEleveController
         arguments: [~, AppBundle\Entity\Eleve, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, group: 'User', label: Eleve }
 
-    admin.enseignant:
+    app.admin.enseignant:
         class: AdminBundle\Controller\UserEnseignantController
         arguments: [~, AppBundle\Entity\Enseignant, ~]
         tags:

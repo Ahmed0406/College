@@ -106,4 +106,10 @@ sonata_block:
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts: [admin]
-        # ...
+
+sonata_admin:
+    title: Administrateur
+    title_logo: /images/logo-x.png
+
+    options:
+        html5_validate: true      # use html5 validation

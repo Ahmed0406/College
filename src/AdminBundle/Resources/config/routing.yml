@@ -4,7 +4,6 @@ admin_area:
 
 admin_homepage:
     path:     /admin
-#    defaults: { _controller: AdminBundle:Default:index }
 
 
 _sonata_admin:
