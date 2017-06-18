@@ -36,3 +36,9 @@ services:
             tags:
                 - { name: sonata.admin, manager_type: orm, group: 'Bibliotheque', label: Livre, show_mosaic_button: true }
 
+    app.admin.article:
+                class: AdminBundle\Controller\ArticleController
+                arguments: [~, AppBundle\Entity\Article, ~]
+                tags:
+                    - { name: sonata.admin, manager_type: orm, group: 'Forum', label: Article, show_mosaic_button: true }
+
