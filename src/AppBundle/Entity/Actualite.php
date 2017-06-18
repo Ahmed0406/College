@@ -152,4 +152,3 @@ class Actualite
         $this->date = $date;
     }
 }
-

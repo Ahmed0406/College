@@ -23,3 +23,16 @@ services:
         arguments: [~, AppBundle\Entity\Enseignant, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, group: 'User', label: Enseignant }
+
+    app.admin.bibliotheque:
+            class: AdminBundle\Controller\BibliothequeController
+            arguments: [~, AppBundle\Entity\Bibliotheque, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: 'Bibliotheque', label: Bibliotheque }
+
+    app.admin.livre:
+            class: AdminBundle\Controller\LivreController
+            arguments: [~, AppBundle\Entity\Livre, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: 'Bibliotheque', label: Livre, show_mosaic_button: true }
+
