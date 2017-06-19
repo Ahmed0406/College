@@ -665,7 +665,6 @@ a.search {
     height: 179px;
 }
 
-
 .tabs_links {
     width: 350px;
     height: 34px;
@@ -790,7 +789,7 @@ a.search {
     float: right;
 }
 
-.tab_content > .title{
+.tab_content > .title {
     padding-bottom: 10px;
     font-size: 16px;
     font-weight: bold;
@@ -1204,7 +1203,7 @@ ul.advance_option li a:hover, ul.advance_option li.selected a {
     border-radius: 1px;
 }
 
-.titleCal{
+.titleCal {
     padding: 10px;
     font-size: 16px;
     font-weight: bold;
@@ -1277,7 +1276,17 @@ ul.advance_option li a:hover, ul.advance_option li.selected a {
     border-bottom: solid 1px #d5d5d5;
 }
 
-.crheading h5.download {
+.crheading1 {
+    width: 230px;
+    height: 38px;
+    float: left;
+    background-color: #fffdd9;
+    line-height: 38px;
+    border-bottom: solid 1px #d5d5d5;
+}
+
+.crheading h5.download,
+.crheading1 h5.download {
     width: 137px;
     padding-top: 0px;
     font-size: 14px;
@@ -1291,7 +1300,8 @@ ul.advance_option li a:hover, ul.advance_option li.selected a {
     padding-left: 42px;
 }
 
-.crheading h5.olineclasses {
+.crheading h5.olineclasses,
+.crheading1 h5.olineclasses {
     width: 137px;
     padding-top: 0px;
     font-size: 14px;
@@ -1305,7 +1315,8 @@ ul.advance_option li a:hover, ul.advance_option li.selected a {
     padding-left: 42px;
 }
 
-.crheading a {
+.crheading a,
+.crheading1 a {
     color: #08387f;
     text-decoration: underline;
     float: left;
@@ -1362,9 +1373,16 @@ ul.advance_option li a:hover, ul.advance_option li.selected a {
     Online Classes Rules
 =======================================================================
 */
-
 .online_classes {
     width: 238px;
+    margin-bottom: 10px;
+    float: left;
+    background-color: #f7f7f7;
+    border: solid 1px #d5d5d5;
+}
+
+.online_classes1 {
+    width: 230px;
     margin-bottom: 10px;
     float: left;
     background-color: #f7f7f7;
@@ -3535,9 +3553,10 @@ a.top {
     border-radius: 1px;
 }
 
-.crate{
-margin: 67px 0 0 0
+.crate {
+    margin: 67px 0 0 0
 }
+
 .loca {
     padding-bottom: 10px;
     font-size: 16px;
@@ -3545,14 +3564,14 @@ margin: 67px 0 0 0
     color: #0e2627;
     height: 27px;
 }
-.maps{
-}
 
-	
+.maps {
+}
 
 .item:hover {
     background: #EEEEEE;
 }
+
 .newsHomeStatic .item {
     display: flex;
     flex-direction: column;
@@ -3563,6 +3582,7 @@ margin: 67px 0 0 0
     transition: all 0.5s ease;
     margin-left: 5px;
 }
+
 .article-title a {
     font: bold 14px/18px "Franklin";
     color: #555;
@@ -3570,6 +3590,7 @@ margin: 67px 0 0 0
     overflow: hidden;
     padding: 0px 7px 0px 10px;
 }
+
 .article-title a {
 
     color: #2f8bc8;
@@ -3577,12 +3598,14 @@ margin: 67px 0 0 0
     overflow: hidden;
 
 }
+
 a {
     color: #666;
     text-decoration: none;
     outline: none;
 
 }
+
 .article-date {
     /* font: 14px/41px "Franklin"; */
     text-transform: uppercase;
@@ -3591,18 +3614,17 @@ a {
     width: 34px;
     height: 13px;
 }
+
 .enteteArticle {
     align-items: center;
     height: 85px;
 }
-
 
 .contact {
     width: 240px;
     float: left;
     padding-bottom: 10px;
 }
-
 
 .contact {
     /* padding-left: 10px; */
@@ -3613,14 +3635,6 @@ a {
 
 }
 
-
-
-
-
-
-
-
-
 element.style {
     height: 100%;
     width: 100%;
@@ -3629,6 +3643,7 @@ element.style {
     left: 0px;
     background-color: rgb(229, 227, 223);
 }
+
 element.style {
     position: absolute;
     left: 0px;
@@ -3640,6 +3655,7 @@ element.style {
     margin: 0px;
     z-index: 0;
 }
+
 element.style {
     position: absolute;
     left: 0px;
@@ -3652,6 +3668,7 @@ element.style {
     z-index: 0;
     cursor: url(https://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default;
 }
+
 element.style {
     position: absolute;
     left: 0px;
@@ -3661,6 +3678,7 @@ element.style {
     transform-origin: 0px 0px 0px;
     transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
 element.style {
     position: absolute;
     left: 0px;
@@ -3673,17 +3691,13 @@ element.style {
     margin: 0px;
 }
 
-
-
-
-
-
 .visitCountContainer legend {
     padding: 0px 5px;
     font-size: 15px;
     font-weight: bold;
     color: #205e87;
 }
+
 .misee {
     width: 212px;
     margin-bottom: 10px;
@@ -3695,12 +3709,8 @@ element.style {
 
 .miss {
     height: 160px !important;
-    width: 160px!important;
+    width: 160px !important;
 }
-
-
-
-
 
 .article-body {
     border-bottom: 1px dashed #c1c1c1;
@@ -3710,17 +3720,21 @@ element.style {
     width: 100%;
 
 }
+
 .more_special.blue {
     background-color: #0386a4 !important;
     color: #fff !important;
     border-color: #075977 !important;
 }
+
 .button.nice {
     background: #00a6fc
 }
+
 .button.nice {
     background: #00a6fc url(../images/button-gloss.png)
 }
+
 .right_content a {
     text-decoration: none;
 }
@@ -3729,13 +3743,13 @@ a.more_special {
     text-shadow: none !important;
     font-weight: normal;
 }
+
 .more_special {
     float: right;
     padding: 4px 8px !important;
     font-size: 10px !important;
     border: 1px solid !important;
 }
-
 
 .button {
     background: #00a6fc;
@@ -3749,8 +3763,6 @@ a.more_special {
     border: none;
 }
 
-
-
 a {
     outline: none;
     text-decoration: none;
@@ -3761,6 +3773,7 @@ a {
     text-decoration: none;
     line-height: inherit;
 }
+
 .more_special {
     float: right;
     padding: 2px 8px !important;
@@ -3769,18 +3782,12 @@ a {
     border-radius: 3px;
 }
 
-
-
-
-
-
-
-
 a.forgot {
     color: #909090;
     font-size: 11px;
     text-shadow: 1px 1px 1px #fff;
 }
+
 .rtab .rtab_content {
     background-color: #f7f7f7;
     width: 238px;
@@ -3801,31 +3808,36 @@ a.forgot {
     float: left;
     padding-left: 42px;
 }
+
 #master {
     width: 960px;
     height: 114px;
     float: left;
     padding-bottom: 0px;
 }
+
 .pagi {
     margin-top: 476px;
     margin-bottom: -96px;
     /* width: 958px; */
     /* margin-left: -249px; */
 }
+
 .col10 {
     width: 240px;
     padding-top: 30px;
     float: right;
     margin-bottom: -68px;
 }
+
 .col11 {
     width: 710px;
     float: left;
     padding-top: 29px;
 }
 
-.crheading h5.message {
+.crheading h5.message,
+.crheading1 h5.message {
     width: 137px;
     padding-top: 0px;
     font-size: 14px;
@@ -3838,7 +3850,9 @@ a.forgot {
     float: left;
     padding-left: 42px;
 }
-.crheading h5.fiche {
+
+.crheading h5.fiche,
+.crheading1 h5.fiche {
     width: 137px;
     padding-top: 0px;
     font-size: 14px;
@@ -3851,7 +3865,9 @@ a.forgot {
     float: left;
     padding-left: 42px;
 }
-.crheading h5.emploi {
+
+.crheading h5.emploi,
+.crheading1 h5.emploi {
     width: 137px;
     padding-top: 0px;
     font-size: 14px;
@@ -3864,7 +3880,9 @@ a.forgot {
     float: left;
     padding-left: 42px;
 }
-.crheading h5.examens {
+
+.crheading h5.examens,
+.crheading1 h5.examens {
     width: 137px;
     padding-top: 0px;
     font-size: 14px;
@@ -3877,7 +3895,9 @@ a.forgot {
     float: left;
     padding-left: 42px;
 }
-.crheading h5.bulletin {
+
+.crheading h5.bulletin,
+.crheading1 h5.bulletin {
     width: 137px;
     padding-top: 0px;
     font-size: 14px;
@@ -3890,7 +3910,9 @@ a.forgot {
     float: left;
     padding-left: 42px;
 }
-.crheading h5.cours {
+
+.crheading h5.cours,
+.crheading1 h5.cours {
     width: 137px;
     padding-top: 0px;
     font-size: 14px;
@@ -3903,7 +3925,9 @@ a.forgot {
     float: left;
     padding-left: 42px;
 }
-.crheading h5.biblio {
+
+.crheading h5.biblio,
+.crheading1 h5.biblio {
     width: 137px;
     padding-top: 0px;
     font-size: 14px;
@@ -3916,7 +3940,9 @@ a.forgot {
     float: left;
     padding-left: 42px;
 }
-.crheading h5.deconnexion {
+
+.crheading h5.deconnexion,
+.crheading1 h5.deconnexion {
     width: 137px;
     padding-top: 0px;
     font-size: 14px;
@@ -3929,6 +3955,7 @@ a.forgot {
     float: left;
     padding-left: 42px;
 }
+
 .poste {
     width: 238px;
     float: left;

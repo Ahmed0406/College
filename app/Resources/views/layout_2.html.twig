@@ -5,38 +5,7 @@
         <!-- Wapper Sec -->
         <div id="wrapper_sec">
             <!-- masterhead -->
-            <div id="master">
-                <!-- Logo -->
-                <div class="socail_networks">
-                    <ul>
-                        <li class="servcies">Rejoignez nous sur</li>
-                        <li>
-                            <a href="https://www.facebook.com/pages/Lyc%C3%A9e-el-ahd-el-jadid-Thala/170218076321546"><img
-                                        src="images/facebook_icon.gif" alt=""/> </a></li>
-                        <li><a href="contact.html"><img src="images/social_icon.gif" alt=""/> </a></li>
-                        <li><a href="#"><img src="images/linkedin_icon.gif" alt=""/> </a></li>
-                        <li><a href="#"><img src="images/twitter_icon.gif" alt=""/> </a></li>
-                        <li><a href="#"><img src="images/rssfeed_icon.gif" alt=""/> </a></li>
-
-                    </ul>
-                </div>
-                <div class="logo">
-                    <a href="{{ path('homepage') }}">
-                        <img src="{{ asset('images/logo.png') }}" alt=""/>
-                    </a>
-                </div>
-                <!-- masterhead Right Section -->
-                <div class="topright_sec">
-                    <!-- top navigation -->
-
-                    <div class="clear"></div>
-                </div>
-                <div class="clear"></div>
-                <!-- Navigation -->
-                <div class="navigation">
-                    {% include ':tmpl:menu.html.twig' %}
-                </div>
-            </div>
+            {% include ':tmpl:header.html.twig' %}
             <!-- Content Seciton -->
             <div id="content_section">
                 <!-- Col1 -->
@@ -86,10 +55,10 @@
                         </div>
                         <ul>
                             <li>
-                                <div class="thumb"><a href="galerie_photos.html"><img src="images/ourcollege1.jpg"
-                                                                                      alt=""></a></div>
+                                <div class="thumb"><a href="#"><img
+                                                src="{{ asset('images/ourcollege1.jpg') }}" alt=""></a></div>
                                 <div class="description">
-                                    <h6><a href="galerie_photos.html"><span class="cufon-alt">Galerier photos</span></a>
+                                    <h6><a href="#"><span class="cufon-alt">Galerier photos</span></a>
                                     </h6>
                                     <a class="gray"><em>(2016-2017)</em></a>
                                 </div>
@@ -104,10 +73,10 @@
                         </div>
                         <ul>
                             <li>
-                                <div class="thumb"><a href="cours_en_ligne.html"><img src="images/pdf_icon.png" alt=""></a>
+                                <div class="thumb"><a href="#"><img src="{{ asset('images/pdf_icon.png') }}" alt=""></a>
                                 </div>
                                 <div class="description">
-                                    <h6><a href="cours_en_ligne.html"><span
+                                    <h6><a href="#"><span
                                                     class="cufon-alt">Cours 1ère année</span></a></h6>
                                     <a class="gray1"><em>(2016-2017)</em></a>
                                 </div>

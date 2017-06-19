@@ -197,18 +197,7 @@ class DefaultController extends Controller
         ));
     }
 
-    /**
-     * @Route("/forum", name="forum")
-     * @param Request $request
-     * @return Response
-     */
-    public function forumAction(Request $request)
-    {
-        $user = $this->getUser();
-        return $this->render(':default:forum.html.twig', array(
-            'user' => $user,
-        ));
-    }
+
 
     /**
      * @Route("/planning", name="planning")

@@ -71,3 +71,8 @@
 </div>
 {% endblock %}
 
+{% block javascripts %}
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    <script type="text/javascript" src="{{ asset('js/map.js') }}"></script>
+{% endblock %}
+

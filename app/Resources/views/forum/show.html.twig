@@ -1,0 +1,33 @@
+{% extends 'layout_2.html.twig' %}
+
+{% block content %}
+    <!-- Blog Listing -->
+    <div class="listing">
+        <div id="content2">
+            <h2 class="pad8">Forum {{ type }}</h2>
+            <!-- Blog Listing -->
+            <ul class="listing">
+                <li>
+                    <div class="thumb"><a href="#"><img src="{{ asset('images/blog1.jpg') }}" alt=""/></a></div>
+                    <div class="description">
+                        <h6><a href="#" class="colr">Lorem ipsum dolor sit amet, Lorem ipsum dolor
+                                sit </a></h6>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta, leo a posuere luctus,
+                            justo leomi leoegestas libero, nec volutpat purus mi leosed dui. Suspendisse sem dui, semper
+                            in semper lacinia, elementum ornare lorem. Lorem ipsum dolor sit amet.
+                        </p>
+                        <div class="clear"></div>
+                        <div class="info">
+                            <span class="postedby">Posted By: <a href="#">Admin</a></span>
+                            <span class="lastupdte"> Last Update by:<i>Tue, 26/01/11</i></span>
+                            <span class="comments"><a href="#"><strong>852</strong> Comments</a></span>
+                            <a class="moreinfo" href="#">:: Moreinfo</a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -45,6 +45,11 @@ class Article
     private $date;
 
     /**
+     * @ORM\Column(name="type", type="string", length=255)
+     */
+    private $type;
+
+    /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commentaire", mappedBy="article")
      */
     private $commentaire;
@@ -54,6 +59,14 @@ class Article
      */
     private $user;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->commentaire = new ArrayCollection();
+        $this->date = new \DateTime();
+    }
 
     /**
      * Get id
@@ -63,6 +76,16 @@ class Article
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
     }
 
     /**
@@ -80,13 +103,13 @@ class Article
     }
 
     /**
-     * Get titre
+     * Get description
      *
      * @return string
      */
-    public function getTitre()
+    public function getDescription()
     {
-        return $this->titre;
+        return $this->description;
     }
 
     /**
@@ -104,13 +127,13 @@ class Article
     }
 
     /**
-     * Get description
+     * Get date
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getDescription()
+    public function getDate()
     {
-        return $this->description;
+        return $this->date;
     }
 
     /**
@@ -125,24 +148,6 @@ class Article
         $this->date = $date;
 
         return $this;
-    }
-
-    /**
-     * Get date
-     *
-     * @return \DateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->commentaire = new ArrayCollection();
-        $this->date = new \DateTime();
     }
 
     /**
@@ -180,6 +185,16 @@ class Article
     }
 
     /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
      * Set user
      *
      * @param \AppBundle\Entity\User $user
@@ -194,12 +209,26 @@ class Article
     }
 
     /**
-     * Get user
+     * Set type
      *
-     * @return \AppBundle\Entity\User
+     * @param string $type
+     *
+     * @return Article
      */
-    public function getUser()
+    public function setType($type)
     {
-        return $this->user;
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }
