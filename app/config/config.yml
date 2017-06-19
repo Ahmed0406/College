@@ -109,9 +109,12 @@ sonata_block:
         sonata.admin.block.search_result:
             contexts: [admin]
 
+
 sonata_admin:
     title: Administrateur
     title_logo: /images/logo-x.png
 
     options:
         html5_validate: true      # use html5 validation
+    templates:
+        user_block: AdminBundle:Core:user_block.html.twig
