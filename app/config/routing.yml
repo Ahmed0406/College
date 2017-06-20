@@ -6,6 +6,13 @@ app_forum:
     resource: "@AppBundle/Controller/ForumController.php"
     type:     annotation
 
+
+
+profil_info:
+  path: /info
+  defaults: { _controller: AppBundle:Profile:info}
+  methods: POST
+
 admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
     prefix:   /

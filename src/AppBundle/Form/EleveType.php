@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +14,10 @@ class EleveType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('niveau')->add('filiere');
+        $builder
+            ->add('address')
+            ->add('email')
+            ->add('username');
     }
     
     /**
@@ -34,11 +38,6 @@ class EleveType extends AbstractType
         return 'app_user_eleve';
     }
 
-    public function getParent()
-    {
-        return 'FOS\UserBundle\Form\Type\RegistrationFormType';
-
-    }
 
 
 }

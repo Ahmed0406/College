@@ -1,0 +1,25 @@
+{{ form_start(form, {'action': path('profil_info')}) }}
+<div class="form">
+    <ul class="inquiryform">
+        <li>
+            <label for="nom">Email</label>
+            {{ form_widget(form.email, {'attr': {
+            }}) }}
+        </li>
+
+        <li>
+            <label for="nom">Username</label>
+            {{ form_widget(form.username, {'attr': {
+            }}) }}
+        </li>
+
+        <li>
+            <label for="nom">Address</label>
+            {{ form_widget(form.address, {'attr': {
+            }}) }}
+        </li>
+    </ul>
+
+    <button class="btn1" type="submit">Modifier</button>
+</div>
+{{ form_end(form) }}

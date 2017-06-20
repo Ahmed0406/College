@@ -1,5 +1,6 @@
 {% extends 'layout_enseignant.html.twig' %}
 
 {% block content_profile %}
-Hello enseignant
+    Bienvenue
+    {{ render(controller('AppBundle:Profile:info')) }}
 {% endblock %}
