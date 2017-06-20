@@ -29,6 +29,11 @@ class Livre
     private $nom;
 
     /**
+     * @ORM\Column(name="description", type="text", length=255000000000)
+     */
+    private $description;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="ref", type="string", length=255, unique=true)
@@ -121,5 +126,29 @@ class Livre
         $this->bibliotheque = $bibliotheque;
 
         return $this;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Livre
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

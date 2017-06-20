@@ -1,0 +1,28 @@
+{% extends 'layout_2.html.twig' %}
+
+{% block content %}
+
+    <!-- Blog Listing -->
+    <div class="listing">
+        <div id="content2">
+            <h2 class="pad8">Bibliotheque {{ nom_biblio }}</h2>
+            <a href="{{ path('bibliotheque') }}" style="float: right">Back to the list</a>
+            <!-- Blog Listing -->
+            <ul class="listing">
+                {% for livre in livres %}
+                    <li>
+                        <div class="description">
+                            <h6><a href="#" class="colr">{{ livre.nom }}</a></h6>
+                            <p>
+                                {{ livre.description | truncate(250, true) }}
+                            </p>
+                            <div class="info">
+                                <span class="postedby">Ref: <a href="#">{{ livre.ref }}</a></span>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

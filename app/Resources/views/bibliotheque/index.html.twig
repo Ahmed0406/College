@@ -1,0 +1,23 @@
+{% extends 'layout_2.html.twig' %}
+
+{% block content %}
+    <h1>Bibliotheques list</h1>
+    <div class="listing">
+        <div class="col1">
+            {% for bibliotheque in bibliotheques %}
+                <div class="online_classes1">
+                    <div class="crheading1">
+                        <h5 class="cours">
+                            <span class="cufon-alt">
+                                <a href="{{ path('bibliotheque_show', {'nom_biblio': bibliotheque.nom , 'id': bibliotheque.id }) }}">
+                                    {{ bibliotheque.nom }}
+                                </a>
+                            </span>
+                        </h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

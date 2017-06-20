@@ -1,3 +1,7 @@
+app_bibliotheque:
+    resource: "@AppBundle/Controller/BibliothequeController.php"
+    type:     annotation
+
 app_forum:
     resource: "@AppBundle/Controller/ForumController.php"
     type:     annotation

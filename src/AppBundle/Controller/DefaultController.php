@@ -211,17 +211,4 @@ class DefaultController extends Controller
             'user' => $user,
         ));
     }
-
-    /**
-     * @Route("/bibliotheque", name="bibliotheque")
-     * @param Request $request
-     * @return Response
-     */
-    public function bibliothequeAction(Request $request)
-    {
-        $user = $this->getUser();
-        return $this->render(':default:bibliotheque.html.twig', array(
-            'user' => $user,
-        ));
-    }
 }
