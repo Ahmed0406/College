@@ -1,0 +1,68 @@
+{% extends 'layout_2.html.twig' %}
+
+{% block content %}
+    <div class="listing">
+
+        <div id="content2">
+            <!-- Blog Detail -->
+            <div class="blog_detail">
+                <div class="bloginfo">
+                    <h5>{{ article.titre }} </h5>
+                    <div class="info info1">
+                        <span class="postedby">Posted By: <a href="#">{{ article.user }}</a></span>
+                        <span class="lastupdte"> Last Update by:<i>{{ article.date | date('d/m/Y') }}</i></span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <p>
+                    {{ article.description }}
+                </p>
+                <a href="#" class="link colr"></a></div>
+            <div class="clear"></div>
+            <!-- Blog Comments -->
+            <div class="blog_comments">
+                <div class="blog_comment1">
+                    {#<div class="thumb">
+                        <a href="#"><img src="images/comment1.jpg" alt=""/></a>
+                    </div>
+                    <div class="description">
+                        <div class="comment_top">
+                            <div class="comment_topleft"><h5>Peter Morgen</h5>
+                                <div class="postdate">
+                                    <i class="poston">Post On Tue, 26/01/11</i>
+                                    <span class="blog_rating blg_rtng1">
+                                                        <a href="#"><img src="images/ratings.jpg" alt=""/> 55</a></span>
+                                </div>
+                            </div>
+                            <div class="comment_topright">
+                                <a class="btn" href="#">Reply</a>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum
+                            rutrum consectetur. Vivamus et nulla ipsum. Nunc accumsan mauris eget nunc imperdiet
+                            commodo. Morbi cursus viverra arcu nec dictum. Pellentesque venenatis, dui vel
+                            vestibulum suscipit, elit eros egestas dolor, nec suscipit ligula risus ut tellus.
+                            Phasellus ante sem.
+                        </p>
+                    </div>#}
+                </div>
+            </div>
+        </div>
+    </div>
+
+   {# <ul>
+        <li>
+            <a href="{{ path('forum_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('forum_edit', { 'id': article.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>#}
+{% endblock %}

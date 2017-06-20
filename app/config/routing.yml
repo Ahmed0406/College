@@ -1,3 +1,7 @@
+app_forum:
+    resource: "@AppBundle/Controller/ForumController.php"
+    type:     annotation
+
 admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
     prefix:   /

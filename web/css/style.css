@@ -1507,7 +1507,7 @@ ul.listing {
 }
 
 ul.listing li {
-    width: 100%;
+    /*width: 100%;*/
     float: left;
     border-bottom: solid 1px #cfcfcf;
     padding: 12px 0 13px 0;
@@ -1527,7 +1527,7 @@ ul.listing li .thumb img {
 }
 
 ul.listing li .description {
-    width: 567px;
+    /*width: 567px;*/
     height: 104px;
     float: right;
 }
@@ -1876,7 +1876,7 @@ ul.listing li .description p {
 
 .bloginfo {
     width: 470px;
-    float: left;
+    /*float: left;*/
     padding-bottom: 12px;
 }
 
@@ -2821,8 +2821,8 @@ ul.inquiryform li select {
 }
 
 ul.inquiryform li .txtarea {
-    width: 267px;
-    height: 67px;
+    width: 667px;
+    height: 167px;
     padding: 7px;
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 11px;

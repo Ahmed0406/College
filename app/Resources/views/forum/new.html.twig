@@ -1,0 +1,27 @@
+{% extends 'layout_2.html.twig' %}
+
+{% block content %}
+    <h1>Article creation</h1>
+
+    {{ form_start(form) }}
+    <div class="form">
+        <ul class="inquiryform">
+            <li>
+                {{ form_widget(form.titre, {'attr': {
+                    'placeholder':'titre'
+                }}) }}
+            </li>
+            <li>
+                {{ form_widget(form.description, {'attr': {
+                    'placeholder':'description',
+                    'class':'txtarea',
+                    'rows':'0',
+                    'cols':'0'
+                }}) }}
+            </li>
+        </ul>
+        {{ form_widget(form) }}
+    <button class="btn1" type="submit">Créer</button>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

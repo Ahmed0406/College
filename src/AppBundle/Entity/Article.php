@@ -33,7 +33,7 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="text", length=2550000000)
      */
     private $description;
 
@@ -55,7 +55,7 @@ class Article
     private $commentaire;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\User", inversedBy="id")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      */
     private $user;
 
@@ -201,7 +201,7 @@ class Article
      *
      * @return Article
      */
-    public function setUser(User $user = null)
+    public function setUser(User $user)
     {
         $this->user = $user;
 
