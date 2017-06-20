@@ -47,6 +47,10 @@ php bin/console doctrine:schema:drop --full-database --force
 php bin/console doctrine:schema:update --force
 ```
 
+```
+php bin/console doctrine:fixtures:load
+```
+
 .4) Installez les assets du bundles
 ```
 php bin/console assets:install
