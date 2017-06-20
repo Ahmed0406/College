@@ -25,7 +25,7 @@ class Enseignant extends User
     protected $id;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string")
      */
     private $specialite;
 

@@ -8,6 +8,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class UserEnseignantController extends AbstractAdmin
 {
@@ -21,6 +22,10 @@ class UserEnseignantController extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->add('nom')
+            ->add('prenom')
+            ->add('date_niss')
+            ->add('specialite')
             ->add('email', 'email')
             ->add('username')
             ->add('plainPassword', 'repeated', array(
@@ -30,8 +35,7 @@ class UserEnseignantController extends AbstractAdmin
                 'second_options' => array('label' => 'form.password_confirmation'),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
-            ->add('enabled')
-            ->add('nom', 'text');
+            ->add('enabled');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

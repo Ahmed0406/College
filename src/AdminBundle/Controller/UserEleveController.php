@@ -20,6 +20,11 @@ class UserEleveController extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->add('nom')
+            ->add('prenom')
+            ->add('date_niss')
+            ->add('niveau')
+            ->add('filiere')
             ->add('email', 'email')
             ->add('username')
             ->add('plainPassword', 'repeated', array(
@@ -29,8 +34,7 @@ class UserEleveController extends AbstractAdmin
                 'second_options' => array('label' => 'form.password_confirmation'),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
-            ->add('enabled')
-            ->add('nom', 'text');
+            ->add('enabled');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -42,7 +46,7 @@ class UserEleveController extends AbstractAdmin
     public function toString($object)
     {
         return $object instanceof Eleve
-            ? $object->getUsername()
-            : 'User est Ajouter'; // shown in the breadcrumb on the create view
+            ? $object->getNom()
+            : 'Eleve est Ajouter'; // shown in the breadcrumb on the create view
     }
 }
