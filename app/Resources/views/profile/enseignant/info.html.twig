@@ -1,5 +1,5 @@
 {{ form_start(form, {'action': path('profil_info')}) }}
-<div class="form">
+<div class="form" style="font-size: 18px">
     <ul class="inquiryform">
         <li>
             <label for="nom">Email</label>
@@ -18,8 +18,27 @@
             {{ form_widget(form.address, {'attr': {
             }}) }}
         </li>
+
+        <li>
+            <label for="nom">Mot de passe</label>
+            {{ form_widget(form.plainPassword.first, {'attr': {
+            }}) }}
+        </li>
+
+        <li>
+            <label for="nom">Répéter le mot de passe</label>
+            {{ form_widget(form.plainPassword.second, {'attr': {
+            }}) }}
+        </li>
     </ul>
 
     <button class="btn1" type="submit">Modifier</button>
 </div>
 {{ form_end(form) }}
+
+<div style="font-size: 24px; margin-top: 30px">
+    <label for="">Nom: {{ user.nom }}</label><br/>
+    <label for="">Preom: {{ user.prenom }}</label><br/>
+    <label for="">Address: {{ user.address }}</label><br/>
+    <label for="">specialite: {{ user.specialite }}</label><br/>
+</div>
