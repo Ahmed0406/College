@@ -88,15 +88,14 @@ class ForumController extends Controller
         dump($chercher);
         $articles = $em->getRepository('AppBundle:Article')->findByType($type, $chercher);
 
-
         /**
          * @var $paginator Paginator
          */
         $paginator = $this->get('knp_paginator');
         $result = $paginator->paginate(
-            $articles,
+            array_reverse($articles),
             $request->query->getInt('page', 1),
-            $request->query->getInt('limit', 5)
+            $request->query->getInt('limit', 3)
         );
 
         return $this->render('forum/show.html.twig', array(
