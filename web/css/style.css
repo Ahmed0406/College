@@ -831,7 +831,7 @@ a.search {
 }
 
 .news .title {
-    background: url(../images/news_bg.png) 0px 0px no-repeat;
+    background: url(../images/news_bg.png) 0 0 no-repeat;
     font-size: 22px;
     color: #08516E;
     padding-left: 40px;
@@ -840,8 +840,7 @@ a.search {
 }
 
 .box {
-
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .search_option {
@@ -1504,13 +1503,14 @@ ul.advance_option li a:hover, ul.advance_option li.selected a {
 ul.listing {
     width: 100%;
     float: left;
+    margin-bottom: 30px;
 }
 
 ul.listing li {
     /*width: 100%;*/
     float: left;
     border-bottom: solid 1px #cfcfcf;
-    padding: 12px 0 13px 0;
+    padding: 30px 0 13px 0;
 }
 
 ul.listing li.last {
@@ -1527,9 +1527,9 @@ ul.listing li .thumb img {
 }
 
 ul.listing li .description {
-    /*width: 567px;*/
-    height: 104px;
-    float: right;
+    width: 710px;
+    /*height: 104px;*/
+    float: left;
 }
 
 ul.listing li .description h6 {
@@ -1551,7 +1551,7 @@ ul.listing li .description p {
     border-top: dotted 1px #ccc;
     padding-top: 9px;
     float: left;
-    width: 562px;
+    width: 100% !important;
     color: #6a788e;
 }
 
@@ -1585,7 +1585,7 @@ ul.listing li .description p {
 
 .moreinfo {
     float: right;
-    padding-right: 2px;
+    padding-right: 15px;
     color: #89ab20;
     font-size: 10px;
 }
@@ -1659,20 +1659,23 @@ ul.listing li .description p {
 */
 .pginaiton {
     background-color: #e7f1ff;
-    width: 710px;
+    width: 100%;
     height: 23px;
     margin-bottom: 8px;
     border-bottom: solid 1px #89ab20;
 }
 
 .pginaiton ul {
-    float: left;
+    text-align: center;
+    padding-top: 5px;
 }
 
 .pginaiton li {
-    float: left;
+    display: inline-block;
     padding-right: 6px;
     margin-left: 6px;
+    margin-top: 0 !important;
+    float: none !important;
 }
 
 .pginaiton li.dots {
@@ -1705,7 +1708,7 @@ ul.listing li .description p {
 }
 
 .pginaiton li a {
-    line-height: 23px;
+    /*line-height: 23px;*/
     padding: 0 9px;
     color: #747474;
     display: inline-block;
@@ -2523,7 +2526,6 @@ h2 {
 }
 
 .pad9 {
-    margin-top: 360px;
     margin-bottom: -97px;
     width: 458px;
 
@@ -3617,7 +3619,7 @@ a {
 
 .enteteArticle {
     align-items: center;
-    height: 85px;
+    /*height: 85px;*/
 }
 
 .contact {
@@ -3971,5 +3973,18 @@ a.forgot {
     background-color: #08387f;
 }
 
+.new_forum {
+    float: right;
+    border: 1px dashed;
+    width: 120px;
+    height: 20px;
+    text-align: center;
+    padding-top: 5px;
+    margin-top: -30px;
+}
+
+.new_forum:hover {
+    color: #40544e;
+}
 
 

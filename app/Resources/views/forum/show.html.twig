@@ -1,35 +1,37 @@
 {% extends 'layout_2.html.twig' %}
 
 {% block content %}
+    <h2 class="pad8">Forum {{ type }}</h2>
+    <a class="new_forum" href="{{ path('forum_new', {'type': type}) }}">Créer un nouveau</a>
+
     <!-- Blog Listing -->
-    <div class="listing">
-        <div id="content2">
-            <h2 class="pad8">Forum {{ type }}</h2>
-            <a href="{{ path('forum_new', {'type': type}) }}"
-            style="float: right;"
-            >Créer un nouveau</a>
-            <!-- Blog Listing -->
-            <ul class="listing">
-                {% for article in articles %}
-                    <li>
-                        <div class="description">
-                            <h6><a href="#" class="colr">{{ article.titre }}
-                                    sit </a></h6>
-                            <p>
-                                {{ article.description | truncate(250, true) }}
-                            </p>
-                            <div class="clear"></div>
-                            <div class="info">
-                                <span class="postedby">Publié par: <a href="#">{{ article.user }}</a></span>
-                                <span class="lastupdte"> Publié le:<i>{{ article.date | date('d/m/Y') }}</i></span>
-                                <span class="comments"><a href="#"><strong></strong> Commentaire</a></span>
-                                <a class="moreinfo" href="{{ path('forum_detail', {'id': article.id, 'type': type}) }}">Plus d'informations</a>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+    <ul class="listing">
+        {% for article in articles %}
+            <li>
+                <div class="description">
+                    <h6><a href="#" class="colr">{{ article.titre }}</a></h6>
+                    <p>{{ article.description | truncate(250, true) }}</p>
+
+                    <div class="clear"></div>
+                    <div class="info">
+                        <span class="postedby">Publié par: <a href="#">{{ article.user }}</a></span>
+                        <span class="lastupdte"> Publié le:<i>{{ article.date | date('d/m/Y') }}</i></span>
+                        <span class="comments"><a href="#"><strong></strong> Commentaire</a></span>
+                        <a class="moreinfo"
+                           href="{{ path('forum_detail', {'id': article.id, 'type': type}) }}">::Plus
+                            d'informations</a>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="clear"></div>
+
+    <!-- pagination Listing -->
+    <div class="pad5">
+        {{ knp_pagination_render(articles) }}
     </div>
+    <div class="clear"></div>
 {% endblock %}

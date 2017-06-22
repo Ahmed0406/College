@@ -2,12 +2,13 @@
 
 namespace AppBundle\Controller;
 
+use Knp\Component\Pager\Paginator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController extends Controller
+class AppController extends Controller
 {
     /**
      * @Route("/", name="homepage")
@@ -22,9 +23,20 @@ class DefaultController extends Controller
 
         $actualite = $em->getRepository('AppBundle:Actualite')->findAll();
 
+        /**
+         * @var $paginator Paginator
+         */
+        $paginator  = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $actualite,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 4)
+        );
+
+
         return $this->render('default/index.html.twig',array(
             'user' => $user,
-            'actualite' => $actualite,
+            'actualite' => $result,
         ));
     }
 

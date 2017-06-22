@@ -11,28 +11,27 @@
                             <a href="javascript:void(0)">
                                 <img alt="" src="http://www.fsegma.rnu.tn/images/new_icon.gif">
                                 <a href="#">{{ act.titre }}</a>
-
-                                <li>{{ act.description }}</li>
+                                <li>{{ act.description | truncate(250, true) }}</li>
                             </a>
                         </div>
+
                         <div class="article-date">
-
-                            <span class="d">{{ act.date|date("d/m/Y")  }}</span>
-
+                            <span class="d">{{ act.date|date("d/m/Y") }}</span>
                         </div>
-
                     </div>
+
                     <div class="article-body">
                         <div class="article-description">
-                            <p>
-                                <a href="#" class="nice small radius more_special blue button"><span>Détails</span></a>
-
+                            <a href="#" class="nice small radius more_special blue button"><span>Détails</span></a>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="clear"></div>
         {% endfor %}
+        <div class="pad9">
+            {{ knp_pagination_render(actualite) }}
+        </div>
     </div>
-
 {% endblock %}
 

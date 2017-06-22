@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Article;
+use Knp\Component\Pager\Paginator;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -73,10 +74,11 @@ class ForumController extends Controller
      *
      * @Route("/{type}", name="forum_show")
      * @Method("GET")
+     * @param Request $request
      * @param $type
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showAction($type)
+    public function showAction(Request $request,$type)
     {
         $user = $this->getUser();
 
@@ -84,10 +86,19 @@ class ForumController extends Controller
 
         $articles = $em->getRepository('AppBundle:Article')->findByType($type);
 
+        /**
+         * @var $paginator Paginator
+         */
+        $paginator  = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $articles,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 5)
+        );
 
         return $this->render('forum/show.html.twig', array(
             'user' => $user,
-            'articles' => $articles,
+            'articles' => $result,
             'type' => $type
         ));
     }
