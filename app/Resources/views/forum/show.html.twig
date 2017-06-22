@@ -3,6 +3,12 @@
 {% block content %}
     <h2 class="pad8">Forum {{ type }}</h2>
     <a class="new_forum" href="{{ path('forum_new', {'type': type}) }}">Créer un nouveau</a>
+    <div class="chercher_forum">
+        <form action="" method="get">
+            <input name="chercher" type="text" title="" placeholder="Chercher..."/>
+            <button type="submit" href="#">Chercher</button>
+        </form>
+    </div>
 
     <!-- Blog Listing -->
     <ul class="listing">

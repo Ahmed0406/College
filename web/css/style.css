@@ -3987,4 +3987,26 @@ a.forgot {
     color: #40544e;
 }
 
+.chercher_forum {
+    display: inline-block;
+    padding-top: 20px;
+}
+
+.chercher_forum input {
+    float: left;
+    width: 54em;
+    height: 33px;
+    border: 1px solid;
+    color: #7f7f7f;
+}
+
+.chercher_forum button {
+    font-size: 23px;
+    margin-left: -1px;
+    color: #7f7f7f;
+    width: 115px;
+    height: 35px;
+    border: 2px solid;
+}
+
 

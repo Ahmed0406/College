@@ -78,18 +78,20 @@ class ForumController extends Controller
      * @param $type
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showAction(Request $request,$type)
+    public function showAction(Request $request, $type)
     {
         $user = $this->getUser();
 
         $em = $this->getDoctrine()->getManager();
 
-        $articles = $em->getRepository('AppBundle:Article')->findByType($type);
+        $chercher = $request->query->getAlnum('chercher');
+        $articles = $em->getRepository('AppBundle:Article')->findByType($type, $chercher);
+
 
         /**
          * @var $paginator Paginator
          */
-        $paginator  = $this->get('knp_paginator');
+        $paginator = $this->get('knp_paginator');
         $result = $paginator->paginate(
             $articles,
             $request->query->getInt('page', 1),

@@ -12,16 +12,30 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticleRepository extends EntityRepository
 {
-    public function findByType($type)
+    public function findByType($type, $chercher)
     {
-        return $this->getEntityManager()
-            ->createQuery(
-                'SELECT a
+        if ($chercher) {
+            $result = $this->getEntityManager()
+                ->createQuery(
+                    'SELECT a
                 FROM AppBundle:Article a
-                WHERE a.type = :type'
-            )
-            ->setParameter('type', $type)
-            ->getResult();
+                WHERE a.type = :typ AND a.description LIKE :cherche'
+                )
+                ->setParameter('typ', $type)
+                ->setParameter('cherche', '%' . $chercher . '%')
+                ->getResult();
+        } else {
+            $result = $this->getEntityManager()
+                ->createQuery(
+                    'SELECT a
+                FROM AppBundle:Article a
+                WHERE a.type = :typ'
+                )
+                ->setParameter('typ', $type)
+                ->getResult();
+        }
+
+        return $result;
 
     }
 }
