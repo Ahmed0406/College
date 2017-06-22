@@ -84,7 +84,8 @@ class ForumController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $chercher = $request->query->getAlnum('chercher');
+        $chercher = $request->query->get('chercher');
+        dump($chercher);
         $articles = $em->getRepository('AppBundle:Article')->findByType($type, $chercher);
 
 

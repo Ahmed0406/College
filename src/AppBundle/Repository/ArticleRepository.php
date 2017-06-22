@@ -19,7 +19,8 @@ class ArticleRepository extends EntityRepository
                 ->createQuery(
                     'SELECT a
                 FROM AppBundle:Article a
-                WHERE a.type = :typ AND a.description LIKE :cherche'
+                WHERE a.type = :typ AND a.description LIKE :cherche
+                OR a.type = :typ AND a.titre LIKE :cherche'
                 )
                 ->setParameter('typ', $type)
                 ->setParameter('cherche', '%' . $chercher . '%')
