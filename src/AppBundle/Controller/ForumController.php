@@ -85,7 +85,6 @@ class ForumController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $chercher = $request->query->get('chercher');
-        dump($chercher);
         $articles = $em->getRepository('AppBundle:Article')->findByType($type, $chercher);
 
         /**
@@ -113,19 +112,22 @@ class ForumController extends Controller
      * @param Article $article
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function detailAction(Article $article)
+    public function detailAction(Article $article, $type)
     {
         $user = $this->getUser();
-        if (!is_object($user) || !$user instanceof UserInterface) {
-            throw new AccessDeniedException('This user does not have access to this section.');
-        }
 
         $deleteForm = $this->createDeleteForm($article);
+        if ($deleteForm) {
+            $form = $deleteForm->createView();
+        } else {
+            $form = false;
+        }
 
         return $this->render('forum/detail.html.twig', array(
             'user' => $user,
             'article' => $article,
-            'delete_form' => $deleteForm->createView(),
+            'delete_form' => $form,
+            'type' => $type,
         ));
     }
 
@@ -138,43 +140,53 @@ class ForumController extends Controller
      */
     private function createDeleteForm(Article $article)
     {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('forum_delete', array('id' => $article->getId())))
-            ->setMethod('DELETE')
-            ->getForm();
+        $user = $this->getUser();
+
+        if ($article->getUser() == $user) {
+            $return = $this->createFormBuilder()
+                ->setAction($this->generateUrl('forum_delete', array('id' => $article->getId())))
+                ->setMethod('DELETE')
+                ->getForm();
+        } else {
+            $return = false;
+        }
+
+        return $return;
     }
 
     /**
      * Displays a form to edit an existing article entity.
      *
-     * @Route("/{id}/edit", name="forum_edit")
+     * @Route("/{type}/article/{id}/edit", name="forum_edit")
      * @Method({"GET", "POST"})
      * @param Request $request
      * @param Article $article
+     * @param $type
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function editAction(Request $request, Article $article)
+    public function editAction(Request $request, Article $article, $type)
     {
         $user = $this->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
+        if ($article->getUser() != $user || $article->getType() != $type) {
+            throw $this->createNotFoundException('The product does not exist');
+        }
 
-        $deleteForm = $this->createDeleteForm($article);
         $editForm = $this->createForm('AppBundle\Form\ArticleType', $article);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('forum_edit', array('id' => $article->getId()));
+            return $this->redirectToRoute('forum_edit', array('type' => $type, 'id' => $article->getId()));
         }
 
         return $this->render('forum/edit.html.twig', array(
             'user' => $user,
             'article' => $article,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 

@@ -4,18 +4,24 @@
     <h1>Article edit</h1>
 
     {{ form_start(edit_form) }}
+    <div class="form">
+        <ul class="inquiryform">
+            <li>
+                {{ form_widget(edit_form.titre, {'attr': {
+                    'placeholder':'titre'
+                }}) }}
+            </li>
+            <li>
+                {{ form_widget(edit_form.description, {'attr': {
+                    'placeholder':'description',
+                    'class':'txtarea',
+                    'rows':'0',
+                    'cols':'0'
+                }}) }}
+            </li>
+        </ul>
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <button class="btn1" type="submit">Edit</button>
+    </div>
     {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('forum_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}

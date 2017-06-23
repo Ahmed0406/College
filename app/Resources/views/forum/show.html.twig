@@ -15,7 +15,8 @@
         {% for article in articles %}
             <li>
                 <div class="description">
-                    <h6><a href="#" class="colr">{{ article.titre }}</a></h6>
+                    <h6><a href="{{ path('forum_detail', {'id': article.id, 'type': type}) }}"
+                           class="colr">{{ article.titre }}</a></h6>
                     <p>{{ article.description | truncate(250, true) }}</p>
 
                     <div class="clear"></div>
