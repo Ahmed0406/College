@@ -1,0 +1,19 @@
+{% for commentaire in commentaires %}
+    <div class="blog_comments">
+        <div class="blog_comment1">
+            <div class="description">
+                <div class="comment_top">
+                    <div class="comment_topleft"><h5>{{ commentaire.user }}</h5>
+                        <div class="postdate">
+                            <i class="poston">Publié le, {{ commentaire.date|date('d/m/Y') }}</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <p>
+                    {{ commentaire.message }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endfor %}

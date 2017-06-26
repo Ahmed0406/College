@@ -24,14 +24,34 @@ class Commentaire
     /**
      * @var string
      *
-     * @ORM\Column(name="message", type="string", length=255)
+     * @ORM\Column(name="message", type="text", length=2550000000000)
      */
     private $message;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     */
+    private $date;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Article", inversedBy="commentaire")
      */
     private $article;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     */
+    private $user;
+
+    /**
+     * constructor.
+     */
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
 
 
     /**
@@ -42,6 +62,16 @@ class Commentaire
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
     }
 
     /**
@@ -59,23 +89,23 @@ class Commentaire
     }
 
     /**
-     * Get message
+     * Get article
      *
-     * @return string
+     * @return \AppBundle\Entity\Article
      */
-    public function getMessage()
+    public function getArticle()
     {
-        return $this->message;
+        return $this->article;
     }
 
     /**
      * Set article
      *
-     * @param \AppBundle\Entity\Actualite $article
+     * @param \AppBundle\Entity\Article $article
      *
      * @return Commentaire
      */
-    public function setArticle(\AppBundle\Entity\Actualite $article = null)
+    public function setArticle(Article $article = null)
     {
         $this->article = $article;
 
@@ -83,12 +113,42 @@ class Commentaire
     }
 
     /**
-     * Get article
-     *
-     * @return \AppBundle\Entity\Actualite
+     * @return mixed
      */
-    public function getArticle()
+    public function getUser()
     {
-        return $this->article;
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user = null)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Commentaire
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
     }
 }

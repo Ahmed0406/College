@@ -1,0 +1,23 @@
+<h1>Commentaire</h1>
+<br/>
+
+{{ form_start(form,{'action': path('commentaire_new', {'article_id':article.id})}) }}
+<div class="leave_reply_form">
+    <ul>
+        <li>
+            {{ form_widget(form.message,{
+                'attr':{
+                    'class':'txtarea',
+                    'placeholder':'Commentaire...'
+                }
+            }) }}
+        </li>
+        <li>
+            <div class="replydiv">
+                <input class="btn left" type="submit" value="Commenté"/>
+            </div>
+        </li>
+    </ul>
+</div>
+{{ form_end(form) }}
+

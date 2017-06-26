@@ -37,7 +37,10 @@
             </div>
             <div class="clear"></div>
             <!-- Blog Comments -->
-
+            {{ render(controller('AppBundle:Commentaire:index',{'article' : article})) }}
+            {{ render(controller('AppBundle:Commentaire:new',{
+                'article_id' : article.id
+            }, {'standalone':true})) }}
         </div>
     </div>
 {% endblock %}

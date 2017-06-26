@@ -1975,13 +1975,17 @@ a.link {
 }
 
 .btn {
-    width: 80px;
-    height: 30px;
-    line-height: 30px;
+    width: 80px !important;
+    height: 30px !important;
+    line-height: 30px !important;
     text-align: center;
     color: #fff;
     background-color: #1B2A36;
     display: inline-block;
+}
+
+.btn:hover{
+    cursor: pointer;
 }
 
 .btn1 {
