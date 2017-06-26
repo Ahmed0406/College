@@ -110,13 +110,14 @@ class ForumController extends Controller
      * @Route("/{type}/article/{id}", name="forum_detail")
      * @Method("GET")
      * @param Article $article
+     * @param $type
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function detailAction(Article $article, $type)
     {
         $user = $this->getUser();
 
-        $deleteForm = $this->createDeleteForm($article);
+        $deleteForm = $this->createDeleteForm($article,$type);
         if ($deleteForm) {
             $form = $deleteForm->createView();
         } else {
@@ -136,15 +137,19 @@ class ForumController extends Controller
      *
      * @param Article $article The article entity
      *
+     * @param $type
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Article $article)
+    private function createDeleteForm(Article $article, $type)
     {
         $user = $this->getUser();
 
         if ($article->getUser() == $user) {
             $return = $this->createFormBuilder()
-                ->setAction($this->generateUrl('forum_delete', array('id' => $article->getId())))
+                ->setAction($this->generateUrl('forum_delete', array(
+                    'id' => $article->getId(),
+                    'type' => $type,
+                )))
                 ->setMethod('DELETE')
                 ->getForm();
         } else {
@@ -193,20 +198,21 @@ class ForumController extends Controller
     /**
      * Deletes a article entity.
      *
-     * @Route("/{id}", name="forum_delete")
+     * @Route("/{type}/article/{id}", name="forum_delete")
      * @Method("DELETE")
      * @param Request $request
      * @param Article $article
+     * @param $type
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteAction(Request $request, Article $article)
+    public function deleteAction(Request $request, Article $article, $type)
     {
         $user = $this->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
-        $form = $this->createDeleteForm($article);
+        $form = $this->createDeleteForm($article, $type);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -215,8 +221,6 @@ class ForumController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('forum_index', array(
-            'user' => $user,
-        ));
+        return $this->redirectToRoute('forum_index');
     }
 }

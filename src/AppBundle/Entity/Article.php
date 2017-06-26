@@ -50,7 +50,7 @@ class Article
     private $type;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commentaire", mappedBy="article")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commentaire", mappedBy="article", cascade={"remove"})
      */
     private $commentaire;
 
@@ -209,6 +209,16 @@ class Article
     }
 
     /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
      * Set type
      *
      * @param string $type
@@ -220,15 +230,5 @@ class Article
         $this->type = $type;
 
         return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
     }
 }
