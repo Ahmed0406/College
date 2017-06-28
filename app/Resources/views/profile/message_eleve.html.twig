@@ -1,0 +1,35 @@
+{% extends 'layout_eleve.html.twig' %}
+
+{% block content_profile %}
+    {% if view == "inbox" %}
+        {{ render(controller('AppBundle:Message:inbox')) }}
+    {% endif %}
+
+    {% if view == "sent" %}
+        {{ render(controller('AppBundle:Message:sent')) }}
+    {% endif %}
+
+    {% if view == "deleted" %}
+        {{ render(controller('AppBundle:Message:deleted')) }}
+    {% endif %}
+
+    {% if view == "thread" %}
+        {{ render(controller('AppBundle:Message:thread',{'threadId' : threadId})) }}
+    {% endif %}
+
+    {% if view == "newThread" %}
+        {{ render(controller('AppBundle:Message:newThread')) }}
+    {% endif %}
+
+    {% if view == "delete" %}
+        {{ render(controller('AppBundle:Message:delete')) }}
+    {% endif %}
+
+    {% if view == "search" %}
+        {{ render(controller('AppBundle:Message:search')) }}
+    {% endif %}
+
+    {% if view == "undelete" %}
+        {{ render(controller('AppBundle:Message:undelete')) }}
+    {% endif %}
+{% endblock %}

@@ -55,14 +55,28 @@
                         </div>
                         <ul>
                             <li>
-
                                 <div class="description">
-                                    <h5><a href="#"><span
-                                                    class="cufon-alt">Message reçu</span></a></h5>
-
+                                    <h5>
+                                        <a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a>
+                                    </h5>
                                 </div>
                             </li>
 
+                            <li>
+                                <div class="description">
+                                    <h5>
+                                        <a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a>
+                                    </h5>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="description">
+                                    <h5>
+                                        <a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a>
+                                    </h5>
+                                </div>
+                            </li>
                         </ul>
                     </div>
 

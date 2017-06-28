@@ -1,0 +1,9 @@
+{% extends message_view %}
+
+{% block content_profile %}
+
+<h2>{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</h2>
+
+{% include ':Message:threads_list.html.twig' with {'threads': threads} %}
+
+{% endblock %}

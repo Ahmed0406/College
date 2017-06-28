@@ -1,0 +1,35 @@
+{% extends message_view %}
+
+{% block content_profile %}
+
+<h2>{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h2>
+
+<form class="leave_reply_form" action="{{ url('fos_message_thread_new') }}" method="post">
+
+    {{ form_label(form.recipient) }}
+    {{ form_widget(form.recipient,{
+        'attr':{
+            'class':'input_text',
+        }
+    }) }}
+    <br/>
+    {{ form_label(form.subject) }}
+    {{ form_widget(form.subject,{
+        'attr':{
+            'class':'input_text',
+        }
+    }) }}
+    <br/>
+    {{ form_widget(form.body,{
+        'attr':{
+            'class':'txtarea',
+            'placeholder':'Message...'
+        }
+    }) }}
+    {{ form_widget(form) }}
+    {#{{ form_errors(form) }}#}
+
+    <input class="btn right" type="submit" />
+</form>
+
+{% endblock %}

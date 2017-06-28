@@ -1984,7 +1984,7 @@ a.link {
     display: inline-block;
 }
 
-.btn:hover{
+.btn:hover {
     cursor: pointer;
 }
 
@@ -4046,4 +4046,63 @@ a.forgot {
 .btn_del_edi input:hover {
     background: #d6d6d6;
     cursor: pointer;
+}
+
+.btn_new {
+    margin-top: -24px;
+    width: 120px !important;
+}
+
+.list-msg {
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+}
+
+.list-msg thead {
+    background: darkseagreen;
+    font-size: 16px;
+}
+
+.messenger_thread_message {
+    margin-top: 50px;
+    margin-bottom: -30px;
+    border-bottom: dotted 1px #ccc;
+}
+
+.messenger_thread_message_info {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.messenger_thread_message_body {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.messenger_thread_form {
+    margin-top: 51px;
+}
+
+form .txtarea{
+    margin-top: 15px;
+    width: 692px;
+    height: 75px;
+    padding: 5px 8px;
+    color: #a9a8a8;
+}
+
+.input_text {
+    width: 270px;
+    height: 27px;
+    line-height: 21px;
+    padding: 0 8px;
+    margin: 6px 0;
+    color: #a9a8a8;
+    border: solid 1px #a9a8a8;
+}
+
+label {
+    display: block;
 }
