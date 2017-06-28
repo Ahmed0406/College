@@ -24,6 +24,7 @@ class LivreController extends AbstractAdmin
     {
         $listMapper
             ->add('nom')
+            ->add('description')
             ->add('ref')
             ->add('bibliotheque.nom', null ,array(
                 'label' => 'bibliotheque'
@@ -42,6 +43,7 @@ class LivreController extends AbstractAdmin
         $formMapper
             ->with('Livre', array('class' => 'col-md-9'))
             ->add('nom', 'text')
+            ->add('description')
             ->add('ref')
             ->end()/*---------------------------------*/
             ->with('bibliotheque', array('class' => 'col-md-3'))

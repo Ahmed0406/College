@@ -122,7 +122,7 @@ class MessageController extends BaseMessageController
         } elseif ($user->hasRole('ROLE_ENSEIGNANT') && $user->hasRole('ROLE_USER')) {
             $message_view = 'profile/message_enseignant.html.twig';
         } elseif ($user->hasRole('ROLE_ADMIN')) {
-            return $this->redirectToRoute('sonata_admin_redirect');
+            $message_view = 'layout_message.html.twig';
         } else {
             return $this->redirectToRoute('homepage');
         }
