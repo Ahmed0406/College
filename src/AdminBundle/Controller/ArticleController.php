@@ -36,9 +36,18 @@ class ArticleController extends AbstractAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $container = $this->getConfigurationPool()->getContainer();
+        $user = $container->get('security.token_storage')->getToken()->getUser();
+        dump($user);
         $formMapper
             ->add('titre', 'text')
-            ->add('description', 'textarea');
+            ->add('description', 'textarea')
+            ->add('user', null, array(
+                'choices' => array(
+                    'user' => $user
+                )
+            ))
+            ->add('type');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
