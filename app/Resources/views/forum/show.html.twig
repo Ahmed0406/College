@@ -3,6 +3,7 @@
 {% block content %}
     <h2 class="pad8">Forum {{ type }}</h2>
     <a class="new_forum" href="{{ path('forum_new', {'type': type}) }}">Créer un nouveau</a>
+    <a class="new_forum retour" href="{{ app.request.headers.get('referer') }}">Retour</a>
     <div class="chercher_forum">
         <form action="" method="get">
             <input name="chercher" type="text" title="" placeholder="Chercher..."/>
@@ -23,7 +24,7 @@
                     <div class="info">
                         <span class="postedby">Publié par: <a href="#">{{ article.user }}</a></span>
                         <span class="lastupdte"> Publié le:<i>{{ article.date | date('d/m/Y') }}</i></span>
-                        <span class="comments"><a href="#"><strong></strong> Commentaire</a></span>
+                        <span class="comments"><a href="{{ path('forum_detail', {'id': article.id, 'type': type}) }}"><strong></strong> Commentaire</a></span>
                         <a class="moreinfo"
                            href="{{ path('forum_detail', {'id': article.id, 'type': type}) }}">::Plus
                             d'informations</a>

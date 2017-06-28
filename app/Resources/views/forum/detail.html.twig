@@ -14,9 +14,13 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                {% if delete_form %}
-                    <div class="btn_del_edi">
-                        <ul>
+
+                <div class="btn_del_edi">
+                    <ul>
+                        <li>
+                            <a type="button" href="{{ app.request.headers.get('referer') }}">Retour</a>
+                        </li>
+                        {% if delete_form %}
                             <li>
                                 <a type="button"
                                    href="{{ path('forum_edit', {'type':type, 'id': article.id }) }}">Edit</a>
@@ -26,9 +30,10 @@
                                 <input type="submit" value="Delete">
                                 {{ form_end(delete_form) }}
                             </li>
-                        </ul>
-                    </div>
-                {% endif %}
+                        {% endif %}
+                    </ul>
+                </div>
+
                 <div>
                     <p>
                         {{ article.description }}

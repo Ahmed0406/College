@@ -185,7 +185,7 @@ class ForumController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('forum_edit', array('type' => $type, 'id' => $article->getId()));
+            return $this->redirectToRoute('forum_detail', array('type' => $type, 'id' => $article->getId()));
         }
 
         return $this->render('forum/edit.html.twig', array(

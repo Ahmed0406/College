@@ -1990,7 +1990,7 @@ a.link {
 
 .btn1 {
     width: 83px;
-    height: 30px;
+    /*height: 30px;*/
     line-height: 27px;
     text-align: center;
     color: #fff;
@@ -3985,6 +3985,10 @@ a.forgot {
 
 .new_forum:hover {
     color: #40544e;
+}
+
+.new_forum.retour{
+    margin-right: 130px;
 }
 
 .chercher_forum {
