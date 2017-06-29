@@ -48,6 +48,46 @@ class User extends BaseUser implements ParticipantInterface
     private $address;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Article", mappedBy="user", cascade={"remove"})
+     */
+    private $article;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commentaire", mappedBy="user", cascade={"remove"})
+     */
+    private $commentaire;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Message", mappedBy="sender", cascade={"remove"})
+     */
+    private $message;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\MessageMetadata", mappedBy="participant", cascade={"remove"})
+     */
+    private $messagedata;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Thread", mappedBy="createdBy", cascade={"remove"})
+     */
+    private $thread;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ThreadMetadata", mappedBy="participant", cascade={"remove"})
+     */
+    private $threaddata;
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
      * Set nom
      *
      * @param string $nom
@@ -62,13 +102,13 @@ class User extends BaseUser implements ParticipantInterface
     }
 
     /**
-     * Get nom
+     * Get prenom
      *
      * @return string
      */
-    public function getNom()
+    public function getPrenom()
     {
-        return $this->nom;
+        return $this->prenom;
     }
 
     /**
@@ -86,13 +126,13 @@ class User extends BaseUser implements ParticipantInterface
     }
 
     /**
-     * Get prenom
+     * Get dateNiss
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getPrenom()
+    public function getDateNiss()
     {
-        return $this->prenom;
+        return $this->date_niss;
     }
 
     /**
@@ -110,13 +150,13 @@ class User extends BaseUser implements ParticipantInterface
     }
 
     /**
-     * Get dateNiss
+     * Get cin
      *
-     * @return \DateTime
+     * @return integer
      */
-    public function getDateNiss()
+    public function getCin()
     {
-        return $this->date_niss;
+        return $this->cin;
     }
 
     /**
@@ -134,13 +174,13 @@ class User extends BaseUser implements ParticipantInterface
     }
 
     /**
-     * Get cin
+     * Get address
      *
-     * @return integer
+     * @return string
      */
-    public function getCin()
+    public function getAddress()
     {
-        return $this->cin;
+        return $this->address;
     }
 
     /**
@@ -158,12 +198,98 @@ class User extends BaseUser implements ParticipantInterface
     }
 
     /**
-     * Get address
-     *
-     * @return string
+     * @return mixed
      */
-    public function getAddress()
+    public function getArticle()
     {
-        return $this->address;
+        return $this->article;
+    }
+
+    /**
+     * @param mixed $article
+     */
+    public function setArticle($article)
+    {
+        $this->article = $article;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommentaire()
+    {
+        return $this->commentaire;
+    }
+
+    /**
+     * @param mixed $commentaire
+     */
+    public function setCommentaire($commentaire)
+    {
+        $this->commentaire = $commentaire;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * @param mixed $message
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMessagedata()
+    {
+        return $this->messagedata;
+    }
+
+    /**
+     * @param mixed $messagedata
+     */
+    public function setMessagedata($messagedata)
+    {
+        $this->messagedata = $messagedata;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getThread()
+    {
+        return $this->thread;
+    }
+
+    /**
+     * @param mixed $thread
+     */
+    public function setThread($thread)
+    {
+        $this->thread = $thread;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getThreaddata()
+    {
+        return $this->threaddata;
+    }
+
+    /**
+     * @param mixed $threaddata
+     */
+    public function setThreaddata($threaddata)
+    {
+        $this->threaddata = $threaddata;
     }
 }
