@@ -1498,7 +1498,15 @@ ul.advance_option li a:hover, ul.advance_option li.selected a {
     width: 710px;
     float: left;
     height: 30px;
+    margin-top: -52px;
 }
+.listing{
+margin-top: 31px;
+}
+
+
+
+
 
 ul.listing {
     width: 100%;
@@ -2331,6 +2339,7 @@ a.link {
 }
 
 .course_listing {
+    margin-top: 37px;
     width: 708px;
     border: solid 1px #bbc1c4;
     background-color: #fafafa;
@@ -2356,7 +2365,7 @@ ul.listheading {
 }
 
 .course_listing li.coursename {
-    width: 252px;
+    width: 298px;
     padding-left: 13px;
 }
 
