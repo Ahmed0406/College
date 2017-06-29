@@ -41,7 +41,7 @@ class Commentaire
     private $article;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="commentaire")
      */
     private $user;
 

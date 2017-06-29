@@ -27,7 +27,7 @@ class MessageMetadata extends BaseMessageMetadata
     protected $message;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="messagedata")
      * @var \FOS\MessageBundle\Model\ParticipantInterface
      */
     protected $participant;

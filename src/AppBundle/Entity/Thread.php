@@ -19,7 +19,7 @@ class Thread extends BaseThread
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="thread")
      * @var \FOS\MessageBundle\Model\ParticipantInterface
      */
     protected $createdBy;

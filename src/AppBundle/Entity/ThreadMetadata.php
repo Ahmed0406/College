@@ -27,7 +27,7 @@ class ThreadMetadata extends BaseThreadMetadata
     protected $thread;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="threaddata")
      * @var \FOS\MessageBundle\Model\ParticipantInterface
      */
     protected $participant;
