@@ -1,0 +1,73 @@
+{% extends 'layout_2.html.twig' %}
+
+{% block content %}
+    <h2 class="pad8">Cours en ligne</h2>
+    <!-- Blog Listing -->
+
+    <div class="listing">
+        <div class="col1">
+
+            <div class="online_classes1">
+                <div class="crheading1">
+                    <h5 class="cours">
+                        <span class="cufon-alt">
+                            <a href="{{ path('support_cours_detail', {'niveau': niveau, 'type': 'Informatique'}) }}">Informatique</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="online_classes1">
+                <div class="crheading1">
+                    <h5 class="cours">
+                        <span class="cufon-alt">
+                            <a href="{{ path('support_cours_detail', {'niveau': niveau, 'type': 'Mathematique'}) }}">Mathematique</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="online_classes1">
+                <div class="crheading1">
+                    <h5 class="cours">
+                        <span class="cufon-alt">
+                            <a href="{{ path('support_cours_detail', {'niveau': niveau, 'type': 'Sciences'}) }}">Sciences</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="online_classes1">
+                <div class="crheading1">
+                    <h5 class="cours">
+                        <span class="cufon-alt">
+                            <a href="{{ path('support_cours_detail', {'niveau': niveau, 'type': 'Lettre'}) }}">Lettre</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="online_classes1">
+                <div class="crheading1">
+                    <h5 class="cours">
+                        <span class="cufon-alt">
+                            <a href="{{ path('support_cours_detail', {'niveau': niveau, 'type': 'Econmie-Gestion'}) }}">Econmie-Gestion</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="online_classes1">
+                <div class="crheading1">
+                    <h5 class="cours">
+                        <span class="cufon-alt">
+                            <a href="{{ path('support_cours_detail', {'niveau': niveau, 'type': 'Physique'}) }}">Physique</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

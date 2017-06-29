@@ -1518,7 +1518,7 @@ ul.listing li.last {
 }
 
 ul.listing li .thumb {
-    width: 126px;
+    width: 50px;
     float: left;
 }
 
@@ -1526,10 +1526,15 @@ ul.listing li .thumb img {
     border: solid 2px #dcdcdc;
 }
 
+.pdf_list{
+    width: 30px;
+}
+
 ul.listing li .description {
     width: 710px;
     /*height: 104px;*/
-    float: left;
+    /*float: left;*/
+    margin-bottom: 10px;
 }
 
 ul.listing li .description h6 {

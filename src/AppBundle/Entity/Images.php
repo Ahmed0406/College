@@ -25,7 +25,7 @@ class Images
 
     /**
      *
-     * @Vich\UploadableField(mapping="file_image", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="upload_image", fileNameProperty="imageName", size="imageSize")
      *
      * @var File
      */

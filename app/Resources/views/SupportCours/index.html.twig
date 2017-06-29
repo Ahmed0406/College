@@ -1,0 +1,54 @@
+{% extends 'layout_2.html.twig' %}
+
+{% block content %}
+    <h2 class="pad8">Cours en ligne</h2>
+    <!-- Blog Listing -->
+
+    <div class="listing">
+        <div class="col1">
+
+            <div class="online_classes1">
+                <div class="crheading1">
+                    <h5 class="cours">
+                        <span class="cufon-alt">
+                                <a href="{{ path('support_cours_show',{'niveau':'1ére'}) }}">1ére Année</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="online_classes1">
+                <div class="crheading1">
+                    <h5 class="cours">
+                        <span class="cufon-alt">
+                                <a href="{{ path('support_cours_show',{'niveau':'2éme'}) }}">2éme Année</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="online_classes1">
+                <div class="crheading1">
+                    <h5 class="cours">
+                        <span class="cufon-alt">
+                                <a href="{{ path('support_cours_show',{'niveau':'3éme'}) }}">3éme Année</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="online_classes1">
+                <div class="crheading1">
+                    <h5 class="cours">
+                        <span class="cufon-alt">
+                                <a href="{{ path('support_cours_show',{'niveau':'4éme'}) }}">4éme Année</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}
