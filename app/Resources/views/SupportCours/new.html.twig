@@ -1,16 +1,22 @@
 {% extends 'layout_2.html.twig' %}
 
 {% block content %}
-    <h1>Cour creation</h1>
+    <h1>Ajouter Cours</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    <div class="form">
+        <ul class="inquiryform">
+            <li>
+                {{ form_widget(form.nom, {'attr': {
+                    'placeholder':'Nom'
+                }}) }}
+            </li>
+                {{ form_widget(form.file.fileFile, {'attr': {
 
-    <ul>
-        <li>
-            <a href="{{ path('support_cours_index') }}">Back to the list</a>
-        </li>
-    </ul>
+                }}) }}
+        </ul>
+        {{ form_widget(form) }}
+        <button class="btn1 right" type="submit">Ajouter</button>
+    </div>
+    {{ form_end(form) }}
 {% endblock %}

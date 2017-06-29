@@ -54,9 +54,13 @@ class SupportCoursController extends Controller
     {
         $user = $this->getUser();
 
-        if ($user->hasRole('ROLE_ENSEIGNANT')){
-            $new = true;
+        $new = null;
+        if ($user){
+            if ($user->hasRole('ROLE_ENSEIGNANT')){
+                $new = true;
+            }
         }
+
         $em = $this->getDoctrine()->getManager();
 
         $cours = $em->getRepository('AppBundle:Cours')->findByNiveau($niveau, $type);
