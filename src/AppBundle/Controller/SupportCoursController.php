@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Cours;
+use Knp\Component\Pager\Paginator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -50,7 +51,7 @@ class SupportCoursController extends Controller
      * @param $type
      * @return Response
      */
-    public function detailAction($niveau, $type)
+    public function detailAction(Request $request,$niveau, $type)
     {
         $user = $this->getUser();
 
@@ -65,9 +66,19 @@ class SupportCoursController extends Controller
 
         $cours = $em->getRepository('AppBundle:Cours')->findByNiveau($niveau, $type);
 
+        /**
+         * @var $paginator Paginator
+         */
+        $paginator  = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            array_reverse($cours),
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 4)
+        );
+
         return $this->render('SupportCours/detail.html.twig', array(
             'user' => $user,
-            'cours' => $cours,
+            'cours' => $result,
             'niveau' => $niveau,
             'type' => $type,
             'new' => $new

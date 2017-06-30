@@ -2640,6 +2640,8 @@ ul.images li.thumb2 {
 
 .pad5 {
     padding-bottom: 8px;
+    display: inline-block;
+    width: 100%;
 }
 
 ul.static_text {
