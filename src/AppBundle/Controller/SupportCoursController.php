@@ -47,18 +47,19 @@ class SupportCoursController extends Controller
 
     /**
      * @Route("/{niveau}/{type}", name="support_cours_detail")
+     * @param Request $request
      * @param $niveau
      * @param $type
      * @return Response
      */
-    public function detailAction(Request $request,$niveau, $type)
+    public function detailAction(Request $request, $niveau, $type)
     {
         $user = $this->getUser();
 
-        $new = null;
-        if ($user){
-            if ($user->hasRole('ROLE_ENSEIGNANT')){
-                $new = true;
+        $verif = null;
+        if ($user) {
+            if ($user->hasRole('ROLE_ENSEIGNANT')) {
+                $verif = 'afficher';
             }
         }
 
@@ -69,7 +70,7 @@ class SupportCoursController extends Controller
         /**
          * @var $paginator Paginator
          */
-        $paginator  = $this->get('knp_paginator');
+        $paginator = $this->get('knp_paginator');
         $result = $paginator->paginate(
             array_reverse($cours),
             $request->query->getInt('page', 1),
@@ -81,7 +82,7 @@ class SupportCoursController extends Controller
             'cours' => $result,
             'niveau' => $niveau,
             'type' => $type,
-            'new' => $new
+            'verif' => $verif
         ));
     }
 
@@ -102,7 +103,7 @@ class SupportCoursController extends Controller
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
-        if (!$user->hasRole('ROLE_ENSEIGNANT')){
+        if (!$user->hasRole('ROLE_ENSEIGNANT')) {
             throw $this->createNotFoundException('The product does not exist');
         }
 

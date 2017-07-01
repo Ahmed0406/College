@@ -3,7 +3,7 @@
 {% block content %}
 
     <h2 class="pad8">Cours de {{ type }}</h2>
-    {% if new %}
+    {% if verif == 'afficher' %}
         <a class="new_forum"
            href="{{ path('support_cours_new', {'niveau': niveau, 'type': type}) }}">Nouveau</a>
     {% endif %}
