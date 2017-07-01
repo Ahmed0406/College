@@ -38,7 +38,6 @@ class ArticleController extends AbstractAdmin
     {
         $container = $this->getConfigurationPool()->getContainer();
         $user = $container->get('security.token_storage')->getToken()->getUser();
-        dump($user);
         $formMapper
             ->add('titre', 'text')
             ->add('description', 'textarea')

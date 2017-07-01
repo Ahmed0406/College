@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Article;
 use AppBundle\Entity\Commentaire;
+use Knp\Component\Pager\Paginator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -22,17 +23,28 @@ class CommentaireController extends Controller
      *
      * @Route(name="commentaire_index")
      * @Method("GET")
+     * @param Request $request
      * @param Article $article
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction(Article $article)
+    public function indexAction(Request $request,Article $article)
     {
         $em = $this->getDoctrine()->getManager();
 
         $commentaires = $em->getRepository('AppBundle:Commentaire')->findByArticle($article);
 
+        /**
+         * @var $paginator Paginator
+         */
+        $paginator  = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $commentaires,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 4)
+        );
+
         return $this->render('commentaire/index.html.twig', array(
-            'commentaires' => $commentaires,
+            'commentaires' => $result,
         ));
     }
 
