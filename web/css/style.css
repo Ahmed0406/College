@@ -4126,3 +4126,8 @@ form .txtarea{
 label {
     display: block;
 }
+
+.view-pdf{
+    width: 100%;
+    height: 80em;
+}

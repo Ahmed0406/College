@@ -1,0 +1,6 @@
+{% extends 'layout_eleve.html.twig' %}
+
+{% block content_profile %}
+    <object class="view-pdf" data="{{ vich_uploader_asset(bulletin.file, 'fileFile') }}"></object>
+
+{% endblock %}
