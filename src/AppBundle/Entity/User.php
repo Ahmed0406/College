@@ -292,4 +292,148 @@ class User extends BaseUser implements ParticipantInterface
     {
         $this->threaddata = $threaddata;
     }
+
+    /**
+     * Add article
+     *
+     * @param \AppBundle\Entity\Article $article
+     *
+     * @return User
+     */
+    public function addArticle(\AppBundle\Entity\Article $article)
+    {
+        $this->article[] = $article;
+
+        return $this;
+    }
+
+    /**
+     * Remove article
+     *
+     * @param \AppBundle\Entity\Article $article
+     */
+    public function removeArticle(\AppBundle\Entity\Article $article)
+    {
+        $this->article->removeElement($article);
+    }
+
+    /**
+     * Add commentaire
+     *
+     * @param \AppBundle\Entity\Commentaire $commentaire
+     *
+     * @return User
+     */
+    public function addCommentaire(\AppBundle\Entity\Commentaire $commentaire)
+    {
+        $this->commentaire[] = $commentaire;
+
+        return $this;
+    }
+
+    /**
+     * Remove commentaire
+     *
+     * @param \AppBundle\Entity\Commentaire $commentaire
+     */
+    public function removeCommentaire(\AppBundle\Entity\Commentaire $commentaire)
+    {
+        $this->commentaire->removeElement($commentaire);
+    }
+
+    /**
+     * Add message
+     *
+     * @param \AppBundle\Entity\Message $message
+     *
+     * @return User
+     */
+    public function addMessage(\AppBundle\Entity\Message $message)
+    {
+        $this->message[] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Remove message
+     *
+     * @param \AppBundle\Entity\Message $message
+     */
+    public function removeMessage(\AppBundle\Entity\Message $message)
+    {
+        $this->message->removeElement($message);
+    }
+
+    /**
+     * Add messagedatum
+     *
+     * @param \AppBundle\Entity\MessageMetadata $messagedatum
+     *
+     * @return User
+     */
+    public function addMessagedatum(\AppBundle\Entity\MessageMetadata $messagedatum)
+    {
+        $this->messagedata[] = $messagedatum;
+
+        return $this;
+    }
+
+    /**
+     * Remove messagedatum
+     *
+     * @param \AppBundle\Entity\MessageMetadata $messagedatum
+     */
+    public function removeMessagedatum(\AppBundle\Entity\MessageMetadata $messagedatum)
+    {
+        $this->messagedata->removeElement($messagedatum);
+    }
+
+    /**
+     * Add thread
+     *
+     * @param \AppBundle\Entity\Thread $thread
+     *
+     * @return User
+     */
+    public function addThread(\AppBundle\Entity\Thread $thread)
+    {
+        $this->thread[] = $thread;
+
+        return $this;
+    }
+
+    /**
+     * Remove thread
+     *
+     * @param \AppBundle\Entity\Thread $thread
+     */
+    public function removeThread(\AppBundle\Entity\Thread $thread)
+    {
+        $this->thread->removeElement($thread);
+    }
+
+    /**
+     * Add threaddatum
+     *
+     * @param \AppBundle\Entity\ThreadMetadata $threaddatum
+     *
+     * @return User
+     */
+    public function addThreaddatum(\AppBundle\Entity\ThreadMetadata $threaddatum)
+    {
+        $this->threaddata[] = $threaddatum;
+
+        return $this;
+    }
+
+    /**
+     * Remove threaddatum
+     *
+     * @param \AppBundle\Entity\ThreadMetadata $threaddatum
+     */
+    public function removeThreaddatum(\AppBundle\Entity\ThreadMetadata $threaddatum)
+    {
+        $this->threaddata->removeElement($threaddatum);
+    }
 }

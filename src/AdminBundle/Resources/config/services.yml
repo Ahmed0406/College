@@ -42,3 +42,16 @@ services:
                 tags:
                     - { name: sonata.admin, manager_type: orm, group: 'Forum', label: Article, show_mosaic_button: true }
 
+    app.admin.bulletin:
+                class: AdminBundle\Controller\BulletinController
+                arguments: [~, AppBundle\Entity\Bulletin, ~]
+                tags:
+                    - { name: sonata.admin, manager_type: orm, group: 'Bulletin', label: Bulletin, show_mosaic_button: true }
+
+    app.admin.enploitemps:
+                class: AdminBundle\Controller\EmploiTempsController
+                arguments: [~, AppBundle\Entity\EmploiTemps, ~]
+                tags:
+                    - { name: sonata.admin, manager_type: orm, group: 'EmploiTemps', label: Emploi de Temps, show_mosaic_button: true }
+
+
