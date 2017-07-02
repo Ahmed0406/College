@@ -70,6 +70,9 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+
+############################################################################################################"
+#---------------------------FOSUserBundle-------------------------------------
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
@@ -79,7 +82,7 @@ fos_user:
         sender_name: "%mailer_user%"
     service:
         user_manager: pugx_user_manager
-
+#----------------------------PUGXMultipleUserBundle------------------------------------
 pugx_multi_user:
   users:
       user:
@@ -100,6 +103,7 @@ pugx_multi_user:
               form:
                   type: AppBundle\Form\EnseignantType
 
+#---------------------------SonataBlockBundle-------------------------------------
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -109,7 +113,7 @@ sonata_block:
         sonata.admin.block.search_result:
             contexts: [admin]
 
-
+#---------------------------SonataAdminBundle-------------------------------------
 sonata_admin:
     title: Administrateur
     title_logo: /images/logo-x.png
@@ -119,7 +123,7 @@ sonata_admin:
     templates:
         user_block: AdminBundle:Core:user_block.html.twig
 
-
+#----------------------------KNPPaginatorBundel------------------------------------
 knp_paginator:
     page_range: 5                      # default page range used in pagination control
     default_options:
@@ -131,11 +135,13 @@ knp_paginator:
         pagination: ':tmpl:pagination.html.twig'     # sliding pagination controls template
         sortable: 'KnpPaginatorBundle:Pagination:sortable_link.html.twig' # sort link template
 
+#----------------------------FOSMessageBundle------------------------------------
 fos_message:
     db_driver: orm
     thread_class: AppBundle\Entity\Thread
     message_class: AppBundle\Entity\Message
 
+#----------------------------VICHUploadBundle------------------------------------
 vich_uploader:
     db_driver: orm
 
