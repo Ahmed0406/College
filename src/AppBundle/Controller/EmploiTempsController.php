@@ -25,6 +25,17 @@ class EmploiTempsController extends Controller
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
+        $view = null;
+        if ($user->hasRole('ROLE_ELEVE') && $user->hasRole('ROLE_USER')) {
+            $view = 'profile/message_eleve.html.twig';
+        } elseif ($user->hasRole('ROLE_ENSEIGNANT') && $user->hasRole('ROLE_USER')) {
+            $view = 'profile/message_enseignant.html.twig';
+        } elseif ($user->hasRole('ROLE_ADMIN')) {
+            $this->redirectToRoute('sonata_admin_redirect');
+        } else {
+            return $this->redirectToRoute('homepage');
+        }
+
         $em = $this->getDoctrine()->getManager();
 
         $emploi = $em->getRepository(EmploiTemps::class)->findOneBy(array(
@@ -33,7 +44,8 @@ class EmploiTempsController extends Controller
 
         return $this->render('EmploiTemps/index.html.twig', array(
             'user' => $user,
-            'emploi' => $emploi
+            'emploi' => $emploi,
+            'view' => $view
         ));
     }
 }
