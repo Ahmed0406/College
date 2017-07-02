@@ -1,6 +1,9 @@
 {% extends 'layout_eleve.html.twig' %}
 
 {% block content_profile %}
-    <object class="view-pdf" data="{{ vich_uploader_asset(bulletin.file, 'fileFile') }}"></object>
-
+    {% if emploi %}
+        <object class="view-pdf" data="{{ vich_uploader_asset(emploi.file, 'fileFile') }}"></object>
+    {% else %}
+        <h3>Aucune Emploi du Temps</h3>
+    {% endif %}
 {% endblock %}

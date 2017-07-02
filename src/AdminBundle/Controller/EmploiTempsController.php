@@ -3,7 +3,7 @@
 namespace AdminBundle\Controller;
 
 use AppBundle\Entity\Bulletin;
-use AppBundle\Entity\Eleve;
+use AppBundle\Entity\User;
 use AppBundle\Form\FilesType;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -37,8 +37,8 @@ class EmploiTempsController extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $container = $this->getConfigurationPool()->getContainer();
-        $user = $container->get('doctrine.orm.default_entity_manager')
-            ->getRepository(Eleve::class)
+        $user = $container->get('doctrine.orm.entity_manager')
+            ->getRepository(User::class)
             ->findAll();
 
         $formMapper

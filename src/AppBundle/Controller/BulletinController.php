@@ -5,6 +5,8 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Bulletin;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Class BulletinController
@@ -19,6 +21,13 @@ class BulletinController extends Controller
     public function indexAction()
     {
         $user = $this->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
+
+        if (!$user->hasRole('ROLE_ELEVE')) {
+            throw $this->createNotFoundException('The product does not exist');
+        }
 
         $em = $this->getDoctrine()->getManager();
 

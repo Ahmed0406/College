@@ -1,7 +1,3 @@
-app_cours:
-    resource: "@AppBundle/Controller/CoursController.php"
-    type:     annotation
-
 app_commentaire:
     resource: "@AppBundle/Controller/CommentaireController.php"
     type:     annotation
