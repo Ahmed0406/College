@@ -46,7 +46,16 @@ class ArticleController extends AbstractAdmin
                     'user' => $user
                 )
             ))
-            ->add('type');
+            ->add('type', 'choice', array(
+                'choices' => array(
+                    'Informatique' => 'Informatique',
+                    'Mathematique' => 'Mathematique',
+                    'Sciences' => 'Sciences',
+                    'Lettre' => 'Lettre',
+                    'Economie-Gestion' => 'Economie-Gestion',
+                    'Physique' => 'Physique'
+                )
+            ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
