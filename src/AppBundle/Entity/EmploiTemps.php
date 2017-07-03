@@ -27,9 +27,14 @@ class EmploiTemps
     private $file;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\User", cascade={"remove"})
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\User")
      */
     private $user;
+
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Bulletin" , cascade={"remove"})
+     */
+    private $bulletin;
 
     /**
      * Get id
@@ -48,7 +53,7 @@ class EmploiTemps
      *
      * @return EmploiTemps
      */
-    public function setFile(\AppBundle\Entity\Files $file = null)
+    public function setFile(Files $file = null)
     {
         $this->file = $file;
 

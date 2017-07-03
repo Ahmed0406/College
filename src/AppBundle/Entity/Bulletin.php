@@ -27,7 +27,7 @@ class Bulletin
     private $file;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\User", cascade={"remove"})
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\User")
      */
     private $user;
 

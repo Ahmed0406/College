@@ -78,6 +78,11 @@ class User extends BaseUser implements ParticipantInterface
     private $threaddata;
 
     /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\EmploiTemps", cascade={"remove"})
+     */
+    private $emploi;
+
+    /**
      * Get nom
      *
      * @return string
