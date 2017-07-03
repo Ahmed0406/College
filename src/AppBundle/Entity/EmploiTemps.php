@@ -93,4 +93,28 @@ class EmploiTemps
     {
         return $this->user;
     }
+
+    /**
+     * Set bulletin
+     *
+     * @param \AppBundle\Entity\Bulletin $bulletin
+     *
+     * @return EmploiTemps
+     */
+    public function setBulletin(\AppBundle\Entity\Bulletin $bulletin = null)
+    {
+        $this->bulletin = $bulletin;
+
+        return $this;
+    }
+
+    /**
+     * Get bulletin
+     *
+     * @return \AppBundle\Entity\Bulletin
+     */
+    public function getBulletin()
+    {
+        return $this->bulletin;
+    }
 }

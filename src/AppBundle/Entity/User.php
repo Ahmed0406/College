@@ -441,4 +441,28 @@ class User extends BaseUser implements ParticipantInterface
     {
         $this->threaddata->removeElement($threaddatum);
     }
+
+    /**
+     * Set emploi
+     *
+     * @param \AppBundle\Entity\EmploiTemps $emploi
+     *
+     * @return User
+     */
+    public function setEmploi(\AppBundle\Entity\EmploiTemps $emploi = null)
+    {
+        $this->emploi = $emploi;
+
+        return $this;
+    }
+
+    /**
+     * Get emploi
+     *
+     * @return \AppBundle\Entity\EmploiTemps
+     */
+    public function getEmploi()
+    {
+        return $this->emploi;
+    }
 }
